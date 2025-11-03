@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ryan Dufault : Autoportrait</title>
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="../styles/stylesProjets.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" defer></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="../scripts/scriptsAutoportrait.js" defer></script>
+  <script src="../scripts/scriptsProjets.js" defer></script>
+</head>
+
+<body>
+  <!-- ======================================================================================================================== -->
+  <!-- ===================================================          HEADER       ============================================== -->
+  <!-- ======================================================================================================================== -->
+  <header class="header">
+    <svg viewBox="0 0 608 126" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet"
+      class="header-svg">
+      <path
+        d="M.5 101V.4h62.8C80.3.6 91 1 95.9 1.6c8.3 1 14 4.8 17.2 11.2a41.2 41.2 0 0 1 3.2 18c0 5.7-.3 10.2-1 13.2-.6 3-1.8 5.4-3.4 7.2-2.6 3-6.7 5-12.2 6.2 4.3.7 7.8 2.4 10.3 5 2 2 3.2 4.5 3.7 7.3.5 2.9.8 8.5.8 17V101h-13.4v-9.7c0-8.2-.2-13.8-.5-17-1-6.4-4.6-10.1-10.9-11.2a59 59 0 0 0-6.6-.6c-2 0-8.5-.2-19.8-.2H13.9V101H.5ZM14 50.5h49.4c13 0 21.4-.2 25.1-.5 3.7-.4 6.7-1.3 9-2.8 3.4-2.3 5.2-7.8 5.2-16.7 0-7.6-1.6-12.5-4.8-14.8-2-1.5-5.3-2.4-9.8-2.9-4.3-.4-12.6-.6-24.7-.6H13.9v38.3ZM122.6 31h13l33.8 61h1.4l31.4-61h13L181 96.1c-4 7.8-7.2 13.3-9.6 16.5-2.3 3.3-4.9 6-7.7 8-2.6 1.8-5.5 3-8.7 3.7a112.8 112.8 0 0 1-19.5.9V115l5 .2a33 33 0 0 0 15.6-2.7c3-1.7 6.3-5.7 9.6-11.7H162L122.6 31Zm107.8 21H219l-.1-3c0-7.3 2.7-12.3 8.2-15 5.5-2.6 15.8-4 31-4 11.9 0 20.4.6 25.6 1.7a23 23 0 0 1 12.3 6.2c2.4 2.4 4 5.3 4.8 8.7.7 3.3 1 9.2 1 17.5V101h-10.9l.2-8.2h-.6c-2.7 3.8-6 6.3-10 7.5a243.9 243.9 0 0 1-47.3.7c-4.7-.6-8.3-1.8-10.8-3.7a14.4 14.4 0 0 1-5.2-6.3c-.9-2.5-1.4-6-1.4-10.3 0-5.5.8-9.6 2.2-12.5 1.5-3 4-5 7.4-6.5a84.2 84.2 0 0 1 26.1-2.4c14.4 0 23.8.4 28.2 1.3 4.4.8 7.8 2.9 10.2 6.2h1v-7.5c0-6.2-1.1-10.6-3.3-13.3-2-2.4-5-4-9-4.9-4-.9-10.5-1.3-19.6-1.3-12 0-19.7.7-23.3 2.1-3.4 1.4-5.2 4.5-5.2 9.2v1Zm28.3 17c-9 0-15.4.2-19 .6-3.7.3-6.3.9-7.8 1.8-3 1.7-4.4 4.9-4.4 9.5 0 4.5 1.8 7.6 5.2 9.3 2.8 1.3 12.2 2 28.3 2 11.8 0 19.5-.8 23.3-2.3 3.8-1.6 5.7-4.7 5.7-9.3a9 9 0 0 0-6.4-9.2 84.8 84.8 0 0 0-24.9-2.3Zm54.7-38h11v10.6h.9a18 18 0 0 1 10.8-9.1 89 89 0 0 1 24.5-2.4c10 0 17.5.6 22.3 1.7 4.9 1.1 8.7 3.1 11.4 6 2.2 2.3 3.7 5.2 4.5 8.7a64 64 0 0 1 1.3 15V101h-11V66.2a77 77 0 0 0-.8-13.4c-.5-2.8-1.6-5-3.1-7a15.6 15.6 0 0 0-8.7-4.5c-3.8-1-9.5-1.4-17.2-1.4a81 81 0 0 0-20 1.9 20.2 20.2 0 0 0-10.8 6.1c-1.6 2-2.7 4.4-3.3 7-.5 2.6-.7 7.1-.7 13.7V101h-11V31ZM451 101V.4h69.5c15.4 0 26.2.6 32.4 1.9a25 25 0 0 1 17.2 12c2 3.3 3.4 7.7 4.3 13.3.8 5.5 1.2 13.2 1.2 23 0 12.4-1 22.2-3.3 29.4a26.2 26.2 0 0 1-22 19.5c-5.8 1-15.4 1.5-28.8 1.5H451Zm13.4-11.8H521l18-.1c2.4-.2 5-.6 7.7-1.3 5.5-1.3 9.4-4.8 11.8-10.7a77 77 0 0 0 3.5-27c0-15.9-2-26.3-6.1-31.3-1.5-2-3.6-3.4-6-4.3-2.6-1-6-1.7-10.3-2-2.6-.2-9-.3-19.3-.3h-55.8v77Zm127-5.2h16.3v17h-16.4V84Z"
+        fill="#3E17FF" />
+    </svg>
+  </header>
+
+  <!-- ======================================================================================================================== -->
+  <!-- ========================================          SECTION PROJET          ============================================== -->
+  <!-- =======================================https://getcameracrew.com/tools/youtube-embed-code-generator=============================================== -->
+  <section class="projet-wrapper" data-index="4">
+    <p v-show="etat === 'loading'" class="fetchEtat">Chargement...</p>
+    <p v-show="etat === 'error'" class="fetchEtat">Erreur lors du chargement des projets.</p>
+    <div class="youtube-container">
+      <img src="../assets/autoportrait/autoportraitthumbnail.webp" alt="Autoportraits combinés">
+    </div>
+    <p class="projet-titre" v-show="etat === 'loaded'">{{ projetActuel?.titre }}</p>
+    <!-- le "?" fait en sorte d'afficher quand les données arrivent sinon c'est broken (https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Optional_chaining) -->
+    <div class="infos-projet" v-show="etat === 'loaded'">
+      <p class="projet-info">Type</p>
+      <p class="projet-info-space">•</p>
+      <p class="projet-type">{{ projetActuel?.type }}</p>
+      <!--                                -->
+      <p class="projet-info">Logiciels</p>
+      <p class="projet-info-space">•</p>
+      <div class="projet-logiciels">
+        <p v-for="(logiciel, index) in projetActuel?.logiciels" v-html="logiciel"></p>
+        <!-- v-html est pour que vue interprète les balises <br>/ht,l qui sont dans le array comme du html (et non du texte) -->
+      </div>
+
+      <!--                                -->
+      <p class="projet-info">Mention</p>
+      <p class="projet-info-space">•</p>
+      <p class="projet-mention">{{ projetActuel?.mention }}</p>
+      <!--                                -->
+      <p class="projet-info">Rôle</p>
+      <p class="projet-info-space">•</p>
+      <p class="projet-role">{{ projetActuel?.roles }}</p>
+    </div>
+    <p class="projet-description" v-html="projetActuel?.description"></p>
+  </section>
+  <div class="spacing"></div>
+  <section class="galerie-wrapper">
+    <div class="image1">
+      <img src="../assets/autoportrait/autoportrait1.webp" alt="Autoportrait numéro 1"
+        @click="selectImg('../assets/autoportrait/autoportrait1.webp')" loading="lazy">
+      <!-- au clic, call la méthode qui récup source de l'img -->
+    </div>
+    <div class="overlay" :class="{ active: image }" @click="closeOverlay">
+      <!-- class .active ajoutée si image select (selectImg(src)), sinon overlay display: none-->
+      <img :src="image"> <!-- affiche image sélectionnée -->
+    </div>
+    <div class="image2">
+      <img src="../assets/autoportrait/autoportrait2.webp" alt="Autoportrait numéro 2"
+        @click="selectImg('../assets/autoportrait/autoportrait2.webp')" loading="lazy">
+    </div>
+    <div class="image3456">
+      <img class="image3456-1" src="../assets/autoportrait/autoportrait3.webp" alt="Autoportrait numéro 3"
+        @click="selectImg('../assets/autoportrait/autoportrait3.webp')" loading="lazy">
+      <img class="video1" src="../assets/autoportrait/autoportrait4.webp" alt="Autoportrait numéro 4"
+        @click="selectImg('../assets/autoportrait/autoportrait4.webp')" loading="lazy">
+      <img class="video2" src="../assets/autoportrait/autoportrait5.webp" alt="Autoportrait numéro 5"
+        @click="selectImg('../assets/autoportrait/autoportrait5.webp')" loading="lazy">
+      <img class="image3456-4" src="../assets/autoportrait/autoportrait6.webp" alt="Autoportrait numéro 6"
+        @click="selectImg('../assets/autoportrait/autoportrait6.webp')" loading="lazy">
+    </div>
+  </section>
+  <div class="spacing"></div>
+  <footer>
+    <div class="footer-wrapper">
+      <p>Ryan Dufaultㅤ-ㅤ2025</p>
+      <a class="footer-links" href="https://github.com/ryandufault" target="_blank">Github</a>
+      <a class="footer-links">LinkedIn</a>
+    </div>
+  </footer>
+</body>
+
+</html>

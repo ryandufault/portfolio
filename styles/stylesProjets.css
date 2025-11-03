@@ -1,0 +1,999 @@
+/*
+
+# https://cssunitconverter.vercel.app/px-to-vw
+# https://cssgridgenerator.io/
+# https://getcameracrew.com/tools/youtube-embed-code-generator
+
+*/
+
+
+:root {
+  --primary: #3e17ff;
+  --second: #ffffff;
+  --clamp24px: clamp(24px,
+      1.25vw,
+      36px);
+  /* ≈24px sur un viewport de 1920x1080px */
+  --clamp16px: clamp(16px,
+      0.833vw,
+      32px);
+  /* ≈16px sur un viewport de 1920x1080px */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-family: Archivo;
+  background-color: var(--second);
+}
+
+body::selection {
+  background-color: var(--primary);
+  filter: invert(100%);
+  color: var(--second);
+}
+
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+/*    HEADER      HEADER      HEADER      HEADER      HEADER      HEADER      HEADER        */
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+
+.header {
+  position: sticky;
+  top: 0;
+  padding-top: var(--clamp24px);
+  /* ≈24px sur un viewport de 1080px */
+  height: 11.615vw;
+  z-index: 100;
+  padding-left: var(--clamp24px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.header:hover {
+  transition: all 0.3s ease;
+}
+
+.header-svg {
+  height: auto;
+  width: 31vw;
+  z-index: 5;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: all 0.3s ease;
+}
+
+.header-svg:hover {
+  filter: blur(1px);
+  transition: all 0.3s ease;
+}
+
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+/*    HEADER      HEADER      HEADER      HEADER      HEADER      HEADER      HEADER        */
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+/*               PROJET        PROJET        PROJET        PROJET        PROJET             */
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+
+.fetchEtat {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  text-align: center;
+  color: #b9b9b9
+}
+
+.projet-wrapper {
+  display: grid;
+  grid-template-columns: repeat(12,
+      1fr);
+  /* <- 12 colonnes de taille répartie également */
+  column-gap: var(--clamp24px);
+  padding-right: var(--clamp24px);
+  /* marges */
+  padding-left: var(--clamp24px);
+  /*background-color: red;  /* debug */
+  overflow: hidden;
+}
+
+.youtube-container {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  /* pour garder le ratio de l'image (9 / 16 = 0.5625 donc 56.25%) / https://ontopmarketing.agency/css-aspect-ratio-calculator/ */
+  overflow: hidden;
+  margin-bottom: 3.75vw;
+}
+
+.youtube-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.youtube-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.projet-titre {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  margin: 0;
+  align-self: start;
+  color: var(--primary);
+  font-size: clamp(42px, 2.813vw, 68px);
+  /*54px sur 1920x1080*/
+}
+
+.infos-projet {
+  grid-column-start: 4;
+  grid-column-end: 7;
+  display: grid;
+  grid-template-columns: repeat(3,
+      1fr);
+  /* <- 3 colonnes de taille répartie également */
+  row-gap: 3.75vw;
+  /* équivalent espacement entre iframe et section infos */
+  column-gap: var(--clamp24px);
+  /*background-color: red; /* débug */
+  overflow: hidden;
+  margin: 0;
+  color: var(--primary);
+  font-size: clamp(18px, 1.25vw, 28px);
+}
+
+.projet-info {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  align-self: start;
+}
+
+.projet-info-space {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  align-self: start;
+  justify-self: end;
+}
+
+.projet-type {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  align-self: start;
+  grid-row: 1;
+}
+
+
+.projet-info:nth-child(1) {
+  grid-row: 1;
+}
+
+.projet-info-space:nth-child(5) {
+  grid-row: 2;
+}
+
+.projet-info:nth-child(4) {
+  grid-row: 2;
+}
+
+.projet-info-space:nth-child(2) {
+  grid-row: 1;
+}
+
+.projet-logiciels {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  align-self: start;
+  grid-row: 2;
+}
+
+/* mention */
+.projet-info:nth-child(7) {
+  grid-row: 3;
+}
+
+.projet-info-space:nth-child(8) {
+  grid-row: 3;
+}
+
+.projet-mention {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  align-self: start;
+  grid-row: 3;
+}
+
+/* rôle */
+.projet-info:nth-child(10) {
+  grid-row: 4;
+}
+
+.projet-info-space:nth-child(11) {
+  grid-row: 4;
+}
+
+.projet-role {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  align-self: start;
+  grid-row: 4;
+}
+
+.projet-description {
+  grid-column-start: 8;
+  grid-column-end: 13;
+  margin: 0;
+  align-self: start;
+  justify-self: start;
+  color: var(--primary);
+  font-size: clamp(36px, 2.188vw, 58px);
+  /*42px sur 1920x1080*/
+}
+
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+/*               PROJET        PROJET        PROJET        PROJET        PROJET             */
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+/*    GALERIE      GALERIE      GALERIE      GALERIE      GALERIE      GALERIE              */
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+
+.spacing {
+  width: 100%;
+  height: 11.615vw
+    /* hauteur du header */
+}
+
+.galerie-wrapper {
+  display: grid;
+  grid-template-columns: repeat(12,
+      1fr);
+  /* <- 12 colonnes de taille répartie également */
+  column-gap: var(--clamp24px);
+  padding-right: var(--clamp24px);
+  /* marges */
+  padding-left: var(--clamp24px);
+  /*background-color: red;  /* debug */
+  overflow: hidden;
+}
+
+.image1 {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  grid-row: 1;
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  /* pour garder le ratio de l'image (9 / 16 = 0.5625 donc 56.25%) / https://ontopmarketing.agency/css-aspect-ratio-calculator/ */
+  overflow: hidden;
+  margin-bottom: 3.75vw;
+}
+
+.image1 img {
+  border: 0.12vw solid var(--primary);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: zoom-in;
+}
+
+.image2 {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  grid-row: 2;
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  /* pour garder le ratio de l'image (9 / 16 = 0.5625 donc 56.25%) / https://ontopmarketing.agency/css-aspect-ratio-calculator/ */
+  overflow: hidden;
+  margin-bottom: 3.75vw;
+}
+
+.image2 img {
+  border: 0.12vw solid var(--primary);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: zoom-in;
+}
+
+.image3456 {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: var(--clamp24px);
+  row-gap: var(--clamp24px);
+}
+
+.image3456 img,
+.image3456 video {
+  width: 100%;
+  /*height: 500px;*/
+  /* alternative si aspect ratio est capricieux */
+  /*aspect-ratio: 16 /9;*/
+  object-fit: cover;
+  cursor: zoom-in;
+}
+
+.image3456 .video1 {
+  border: 0.12vw solid var(--primary);
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  object-fit: cover;
+  cursor: zoom-in;
+}
+
+.image3456-1 {
+  border: 0.12vw solid var(--primary);
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  object-fit: cover;
+  cursor: zoom-in;
+}
+
+.image3456 .video2 {
+  border: 0.12vw solid var(--primary);
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  object-fit: cover;
+  cursor: zoom-in;
+}
+
+.image3456-4 {
+  border: 0.12vw solid var(--primary);
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  object-fit: cover;
+  cursor: zoom-in;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: zoom-out;
+  backdrop-filter: blur(2px);
+  /* flou de fond */
+  background-image: url("./assets/noise.svg");
+  /* effet de grain de fond */
+}
+
+.overlay img {
+  /* display l'image avec le @click */
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+
+}
+
+.overlay source {
+  /* display l'image avec le @click */
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+/* pour montrer l'overlay quand une image est cliquée (si overlay possède class : active) */
+.overlay.active {
+  display: flex;
+}
+
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+/*    GALERIE      GALERIE      GALERIE      GALERIE      GALERIE      GALERIE              */
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+/*          PROCESSUS      PROCESSUS      PROCESSUS      PROCESSUS      PROCESSUS           */
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+.processus-container {
+  padding-top: 3.75vw; /* équivalent espace titre projet et yt container*/
+  grid-column-start: 1;
+  grid-column-end: -1;
+  display: grid;
+  column-gap: var(--clamp24px);
+  row-gap: var(--clamp24px);
+}
+
+h3 {
+  font-size: clamp(36px, 2.188vw, 58px); /* équivalent description projet */
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 400;
+  justify-self: start;
+}
+
+.etape1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--clamp24px);
+  overflow: hidden;
+  margin: 0;
+  color: var(--primary);
+  padding-bottom: var(--clamp16px); /* en plus du rowgap de 24px */
+}
+
+.etape2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--clamp24px);
+  overflow: hidden;
+  margin: 0;
+  color: var(--primary);
+  padding-bottom: var(--clamp16px); /* en plus du rowgap de 24px */
+}
+
+.etape3 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--clamp24px);
+  overflow: hidden;
+  margin: 0;
+  color: var(--primary);
+  padding-bottom: var(--clamp16px); /* en plus du rowgap de 24px */
+}
+
+.etape1 p:first-of-type { /* sélectionne premier texte */
+  grid-column-start: 1;
+  grid-column-end: 2;
+  align-self: start;
+  justify-self: start;
+  font-size: clamp(18px, 1.25vw, 28px);
+  padding-bottom: var(--clamp16px);
+
+}
+
+.etape1 p:last-of-type { /* sélectionne deuxième texte */
+  grid-column-start: 1;
+  grid-column-end: 3;
+  font-size: var(--clamp16px);
+  padding-bottom: clamp(18px, 0.625vw, 28px);
+  align-self: end;
+}
+
+.etape1 img:first-of-type { /* sélectionne première image */
+  grid-column-start: 1;
+  grid-column-end: 2;
+  border: 0.12vw solid var(--primary);
+  object-fit: scale-down;
+  cursor: zoom-in;
+  max-width: 100%; /* empêche de dépasser le container */
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+
+.etape1 img:last-of-type { /* sélectionne deuxième image */
+  grid-column-start: 2;
+  grid-column-end: 3;
+  border: 0.12vw solid var(--primary);
+  object-fit: scale-down;
+  cursor: zoom-in;
+  max-width: 100%; /* empêche de dépasser le container */
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.etape2 p:first-of-type { /* sélectionne premier texte */
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  font-size: clamp(18px, 1.25vw, 28px);
+  padding-bottom: var(--clamp16px);
+  align-self: start;
+  justify-self: start;
+  
+}
+
+.etape2 p:last-of-type { /* sélectionne deuxième texte */
+  grid-column-start: 1;
+  grid-column-end: 3;
+  font-size: var(--clamp16px);
+  padding-bottom: clamp(18px, 0.625vw, 28px);
+  align-self: end;
+}
+
+.etape2 img:first-of-type { /* sélectionne première image */
+  grid-column-start: 1;
+  grid-column-end: 2;
+  border: 0.12vw solid var(--primary);
+  object-fit: cover;
+  cursor: zoom-in;
+  max-width: 100%; /* empêche de dépasser le container */
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.etape2 img:last-of-type { /* sélectionne deuxième image */
+  grid-column-start: 2;
+  grid-column-end: 3;
+  border: 0.12vw solid var(--primary);
+  object-fit: cover;
+  cursor: zoom-in;
+  max-width: 100%; /* empêche de dépasser le container */
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.etape3 p:first-of-type { /* sélectionne premier texte */
+  grid-column-start: 1;
+  grid-column-end: 2;
+  font-size: clamp(18px, 1.25vw, 28px);
+  padding-bottom: var(--clamp16px);
+  align-self: start;
+  justify-self: start;
+}
+
+.etape3 p:last-of-type { /* sélectionne deuxième texte */
+  grid-column-start: 1;
+  grid-column-end: 3;
+  font-size: var(--clamp16px);
+  padding-bottom: clamp(18px, 0.625vw, 28px);
+  align-self: end;
+}
+
+.etape3 img:first-of-type { /* sélectionne première image */
+  border: 0.12vw solid var(--primary);
+  object-fit: cover;
+  cursor: zoom-in;
+  max-width: 100%; /* empêche de dépasser le container */
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.etape3 img:last-of-type { /* sélectionne deuxième image */
+  grid-column-start: 2;
+  grid-column-end: 3;
+  border: 0.12vw solid var(--primary);
+  object-fit: cover;
+  cursor: zoom-in;
+  max-width: 100%; /* empêche de dépasser le container */
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+/*          PROCESSUS      PROCESSUS      PROCESSUS      PROCESSUS      PROCESSUS           */
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+/*               FOOTER        FOOTER        FOOTER        FOOTER        FOOTER             */
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+
+
+.footer-wrapper {
+  position: relative;
+  display: grid;
+  /* pour aligner le texte */
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: var(--clamp24px);
+  padding-right: var(--clamp24px);
+  padding-left: var(--clamp24px);
+}
+
+.footer-wrapper>p {
+  /* sélectionne l'enfant (<p>) du parent */
+  padding-bottom: 4.16vw;
+  /*équivalent responsive de l'espacement entre le h1 projets et les filtres*/
+  grid-column-start: 1;
+  grid-column-end: 5;
+  align-self: start;
+  justify-self: start;
+  font-size: clamp(12px, 0.729vw, 36px);
+  /* ≈14px sur un viewport de 1920x1080px */
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 400;
+  z-index: 4;
+}
+
+.footer-links {
+  padding-bottom: 4.16vw;
+  /*équivalent responsive de l'espacement entre le h1 projets et les filtres*/
+  align-self: end;
+  justify-self: end;
+  font-size: clamp(12px, 0.729vw, 36px);
+  /* ≈14px sur un viewport de 1920x1080px */
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 400;
+  cursor: pointer;
+  object-fit: contain;
+  z-index: 4;
+}
+
+.footer-links:nth-child(2) {
+  grid-column-start: 11
+}
+
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+/*               FOOTER        FOOTER        FOOTER        FOOTER        FOOTER             */
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+
+/** ===============================     MEDIA   QUERIES    ================================ */
+/** ===============================     MEDIA   QUERIES    ================================ */
+/** ===============================     MEDIA   QUERIES    ================================ */
+
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+/*               TABLETTE          TABLETTE         TABLETTE         TABLETTE               */
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+
+@media screen and (max-width: 1450px) {
+  /* tablettes et plus petits écrans */
+
+  /* /////////////////////////////////////////////////////////////////////////// */
+
+  .footer-wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: var(--clamp24px);
+    padding-right: var(--clamp24px);
+    padding-left: var(--clamp24px);
+  }
+
+  .footer-wrapper>p {
+    /* sélectionne l'enfant (<p>) du parent = (Ryan Dufault)*/
+    padding-bottom: 4.16vw;
+    /*équivalent responsive de l'espacement entre le h1 projets et les filtres*/
+    grid-column-start: 1;
+    grid-column-end: 3;
+    align-self: start;
+    justify-self: start;
+  }
+
+  .footer-links:nth-child(3) {
+    padding-bottom: 4.16vw;
+    /*équivalent responsive de l'espacement entre le h1 projets et les filtres*/
+    align-self: end;
+    justify-self: end;
+    grid-column-start: 6;
+  }
+
+  .footer-links:nth-child(2) {
+    grid-column-start: 5;
+  }
+
+
+}
+
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+/*               TABLETTE          TABLETTE         TABLETTE         TABLETTE               */
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+/*               MOBILE          MOBILE         MOBILE         MOBILE                       */
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+
+@media screen and (max-width: 750px) {
+  .header {
+    padding-top: var(--clamp16px);
+    /* ≈24px sur un viewport de 1080px */
+    padding-left: var(--clamp16px);
+    height: 15vw;
+  }
+
+  .header-svg {
+    width: 45vw;
+    /* pour aligner à la 4ème colonne */
+  }
+
+  /* /////////////////////////////////////////////////////////////////////////// */
+
+  .youtube-container {
+    margin-bottom: 10vw;
+    /* x3 du grand viewport */
+  }
+
+  .projet-wrapper {
+    display: grid;
+    grid-template-columns: repeat(6,
+        1fr);
+    /* <- 12 colonnes de taille répartie également */
+    column-gap: var(--clamp16px);
+    padding-right: var(--clamp16px);
+    /* marges */
+    padding-left: var(--clamp16px);
+    /*background-color: red;  /* debug */
+    overflow: hidden;
+  }
+
+  .projet-titre {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    font-size: clamp(32px, 1.875vw, 42px);
+    /*32px*/
+    grid-row: 2;
+  }
+
+  .infos-projet {
+    padding-top: 10vw;
+    /* espacement egal au yt container */
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row: 3;
+    row-gap: 7.5vw;
+    /* x2 */
+    font-size: var(--clamp16px)
+  }
+
+  .projet-info {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    align-self: start;
+  }
+
+  .projet-info-space {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    align-self: start;
+    justify-self: center;
+  }
+
+  .projet-type {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    align-self: start;
+    grid-row: 1;
+    text-align: right;
+  }
+
+
+  .projet-info:nth-child(1) {
+    grid-row: 1;
+  }
+
+  .projet-info-space:nth-child(5) {
+    grid-row: 2;
+  }
+
+  .projet-info:nth-child(4) {
+    grid-row: 2;
+  }
+
+  .projet-info-space:nth-child(2) {
+    grid-row: 1;
+  }
+
+  .projet-logiciels {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    align-self: start;
+    grid-row: 2;
+    text-align: right;
+  }
+
+  /* mention */
+  .projet-info:nth-child(7) {
+    grid-row: 3;
+  }
+
+  .projet-info-space:nth-child(8) {
+    grid-row: 3;
+  }
+
+  .projet-mention {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    align-self: start;
+    grid-row: 3;
+    text-align: right;
+  }
+
+  /* rôle */
+  .projet-info:nth-child(10) {
+    grid-row: 4;
+  }
+
+  .projet-info-space:nth-child(11) {
+    grid-row: 4;
+  }
+
+  .projet-role {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    align-self: start;
+    grid-row: 4;
+    text-align: right;
+  }
+
+  .projet-description {
+    grid-column-start: 3;
+    grid-column-end: -1;
+    font-size: var(--clamp16px);
+    text-align: right !important;
+    /* car l'animation gsap textsplit override l'alignement du text*/
+    grid-row: 2;
+  }
+
+  /* /////////////////////////////////////////////////////////////////////////// */
+
+  .galerie-wrapper {
+    display: grid;
+    grid-template-columns: repeat(6,
+        1fr);
+    column-gap: var(--clamp16px);
+    padding-right: var(--clamp16px);
+    padding-left: var(--clamp16px);
+  }
+
+  .image1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row: 1;
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    /* pour garder le ratio de l'image (9 / 16 = 0.5625 donc 56.25%) / https://ontopmarketing.agency/css-aspect-ratio-calculator/ */
+    overflow: hidden;
+    margin-bottom: 3.75vw;
+    aspect-ratio: 1/1;
+  }
+
+  .image1 img {
+    border: 0.12vw solid var(--primary);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .image2 {
+    grid-column-start: 4;
+    grid-column-end: -1;
+    grid-row: 1;
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    /* pour garder le ratio de l'image (9 / 16 = 0.5625 donc 56.25%) / https://ontopmarketing.agency/css-aspect-ratio-calculator/ */
+    overflow: hidden;
+    margin-bottom: 3.75vw;
+  }
+
+  .image2 img {
+    border: 0.12vw solid var(--primary);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .image3456 {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    column-gap: var(--clamp24px);
+    row-gap: var(--clamp24px);
+  }
+
+  .image3456 img,
+  .image3456 video {
+    width: 100%;
+    /*height: 500px;*/
+    /* alternative si aspect ratio est capricieux */
+    object-fit: cover;
+  }
+
+  .image3456 .video1 {
+    border: 0.12vw solid var(--primary);
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    align-self: start;
+  }
+
+  .image3456-1 {
+    border: 0.12vw solid var(--primary);
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    aspect-ratio: 4/3;
+    align-self: start;
+  }
+
+  .image3456 .video2 {
+    border: 0.12vw solid var(--primary);
+    grid-column-start: -1;
+    grid-column-end: 1;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    align-self: start;
+  }
+
+  .image3456-4 {
+    border: 0.12vw solid var(--primary);
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    align-self: start;
+  }
+
+
+
+  /* /////////////////////////////////////////////////////////////////////////// */
+
+  .footer-wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: var(--clamp16px);
+    padding-right: var(--clamp16px);
+    padding-left: var(--clamp16px);
+    padding-top: 4.16vw;
+
+  }
+
+  .footer-wrapper>p {
+    /* sélectionne l'enfant (<p>) du parent = (Ryan Dufault)*/
+    padding-bottom: 4.16vw;
+    /*équivalent responsive de l'espacement entre le h1 projets et les filtres*/
+    grid-column-start: 1;
+    grid-column-end: 5;
+    align-self: start;
+    justify-self: start;
+
+  }
+
+  .footer-links:nth-child(3) {
+    padding-bottom: 4.16vw;
+    /*équivalent responsive de l'espacement entre le h1 projets et les filtres*/
+    align-self: end;
+    justify-self: end;
+    grid-column-start: 6;
+  }
+
+  .footer-links:nth-child(2) {
+    grid-column-start: 5;
+  }
+
+
+  .overlay img {
+    max-width: 150%;
+    max-height: 100%;
+    transform: rotate(-90deg);
+    /* rotate l'img sélectionnée à 90 degré (mieux adapté/intuitif aux écrans mobiles) */
+  }
+}
+
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+/*               MOBILE          MOBILE         MOBILE         MOBILE                       */
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */

@@ -1,0 +1,97 @@
+{
+  "projets": [
+    {
+      "id": 0,
+      "titre": "Fleur",
+      "type": "Vidéo",
+      "logiciels": [
+        "After Effects<br>",
+        "DaVinci Resolve<br>",
+        "Maya<br>",
+        "Touch Designer<br>",
+        "FL Studio<br>",
+        "Cubase"
+      ],
+      "mention": "Projet académique",
+      "roles": [
+        "Modélisateur 3D<br>",
+        "Animateur 3D<br>",
+        "Intégrateur multimédia<br>",
+        "Compositeur audio<br>",
+        "Monteur vidéo"
+      ],
+      "description": "Projet réalisé dans le cadre de 3 cours explorant différents aspects du multimédia dans le but de former un paysage abstrait.<br><br> Fleur est une oeuvre contemplative présentant une métamorphose douce et abstraite d'un pissenlit en lucioles. Le spectateur explore un monde révélant une danse fragile entre l'infiniment petit et l'infiniment vaste."
+    },
+    {
+      "id": 1,
+      "titre": "Birden",
+      "type": "Vidéo",
+      "logiciels": [
+        "After Effects<br>",
+        "DaVinci Resolve"
+      ],
+      "mention": "Projet personnel",
+      "roles": [
+        "Direction photo<br>",
+        "Monteur vidéo"
+      ],
+      "description": "Birden est un clip musical présentant une réalité abstraite, inspirée du quotidien d'une personne constamment en mouvement.<br> Au fil des saisons et du temps, la réalité change, pour le meilleur ou pour le pire.<br> <br>Le clip est tourné à l'iPhone 5 en portrait dans le but de donner un sentiment d'authenticité, donnant au spectateur l'impression de prendre une marche à travers les saisons.<br><br>En collaboration avec l'artiste ''yorel1''"
+    },
+    {
+      "id": 2,
+      "titre": "Le Corps",
+      "type": "Vidéo",
+      "logiciels": [
+        "After Effects<br>",
+        "DaVinci Resolve<br>",
+        "Cubase"
+      ],
+      "mention": "Projet académique réalisé en équipe avec Yannick Chamberland et Benjamin Ferland",
+      "roles": [
+        "Direction photo<br>",
+        "Monteur vidéo<br>",
+        "Compositeur audio"
+      ],
+      "description": "Le Corps est un projet vidéo explorant la détresse émotionnelle à travers le corps d'une personne. <br>En combinant des plans rapprochés du sujet et des plans métaphoriques mettant en scène l'eau, le projet traduit visuellement un sentiment de désespoir profond."
+    },
+    {
+      "id": 3,
+      "titre": "Maison Hantée",
+      "type": "Web",
+      "logiciels": [
+        "HTML<br>",
+        "CSS"
+      ],
+      "mention": "Projet académique",
+      "roles": [
+        "Développeur web<br>",
+        "Designer graphique"
+      ],
+      "description": "Maison Hantée est un projet de portail web sur le thème de l'horreur. L'interacteur se retrouve devant des portes, chacune menant à des créatures terrifiantes."
+    },
+    {
+      "id": 4,
+      "titre": "Autoportrait",
+      "type": "Design graphique",
+      "logiciels": [
+        "Photoshop<br>",
+        "After Effects"
+      ],
+      "mention": "Projet académique",
+      "roles": "Designer graphique",
+      "description": "Autoportrait qui présente ma curiosité pour l'expérimentation. À travers des compositions visuelles abstraites, le projet reflète mon désir de repousser les limites de la création."
+    },
+    {
+      "id": 5,
+      "titre": "Incisive",
+      "type": "Design graphique",
+      "logiciels": [
+        "Photoshop<br>",
+        "Illustrator"
+      ],
+      "mention": "Projet académique",
+      "roles": "Designer graphique",
+      "description": "Incisive est un générique fictif visant une approche abstraite au vectoriel, notamment avec l'utilisation des modes de fusions. Le projet explore une atmosphère atypique où les formes, les textures et les couleurs se superposent pour créer une expérience visuelle intrigante."
+    }
+  ]
+}

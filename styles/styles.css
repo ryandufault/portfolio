@@ -1,0 +1,1242 @@
+/*
+
+# https://cssunitconverter.vercel.app/px-to-vw
+# https://cssgridgenerator.io/
+
+*/
+
+
+:root {
+  --primary: #3e17ff;
+  --second: #ffffff;
+  --clamp24px: clamp(24px,
+      1.25vw,
+      36px);
+  /* ≈24px sur un viewport de 1920x1080px */
+  --clamp16px: clamp(16px,
+      0.833vw,
+      32px);
+  /* ≈16px sur un viewport de 1920x1080px */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-family: Archivo;
+}
+
+body::selection {
+  background-color: var(--primary);
+  filter: invert(100%);
+  color: var(--second);
+}
+
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+/*    HEADER      HEADER      HEADER      HEADER      HEADER      HEADER      HEADER        */
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+
+.header {
+  position: sticky;
+  top: 0;
+  padding-top: var(--clamp24px);
+  /* ≈24px sur un viewport de 1080px */
+  height: 130px;
+  z-index: 100;
+  padding-left: var(--clamp24px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.header:hover {
+  transition: all 0.3s ease;
+}
+
+.svg-wrapper {
+  top: 0;
+  padding-left: var(--clamp24px);
+  /* ≈24px sur un viewport de 1080px */
+  padding-right: clamp(12px,
+      1.25vw,
+      36px);
+  /* ≈24px sur un viewport de 1080px */
+  height: 100%;
+  z-index: 10;
+}
+
+.svg-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding-top: var(--clamp24px);
+  /* ≈24px sur un viewport de 1080px */
+}
+
+.responsive-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.header-svg {
+  height: auto;
+  width: 31vw;
+  /*transform: translateY(-20vh);*/
+  /* <- ancienne animation */
+  clip-path: inset(100% 0% 0% 0%);
+  /* <- par le haut */
+  /*clip-path: inset(0% 0% 50% 50%); */
+  /* <- par la droite */
+  z-index: 5;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: all 0.3s ease;
+}
+
+.header-svg:hover {
+  filter: blur(1px);
+  transition: all 0.3s ease;
+}
+
+.header-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 84px;
+  color: var(--primary);
+  top: 0px;
+  font-size: var(--clamp16px);
+  /*16px sur vwh 1920x1080*/
+}
+
+.a-header {
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.a-header:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+/*    HEADER      HEADER      HEADER      HEADER      HEADER      HEADER      HEADER        */
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+/*               SECTION PROJETS       SECTION PROJETS        SECTION PROJETS               */
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+
+.spacing {
+  padding-bottom: clamp(200px, 25.17vw, 600px);
+}
+
+.projets-wrapper {
+  display: grid;
+  grid-template-columns: repeat(12,
+      1fr);
+  /* <- 12 colonnes de taille répartie également */
+  /*grid-template-rows: 6.9% 1fr;
+  /* première row : prend 6.9% (les filtres et le h1) --- deuxième row : restant du 1330px) */
+  grid-template-rows: auto 1fr;
+  column-gap: var(--clamp24px);
+  padding-right: var(--clamp24px);
+  padding-left: var(--clamp24px);
+  /*min-height: clamp(1100px,
+      123vh,
+      1119px);
+  /* environ 1330px quand écran hauteur = 1080px */
+  /*background-color: red;*/
+  /* débug */
+}
+
+.projets-filters-container {
+  grid-column-start: 3;
+  grid-column-end: 11;
+  grid-row: 1;
+  display: grid;
+  row-gap: 4.16vw;
+  /* espacement égal entre le h1 et les filtres */
+  display: flex;
+  flex-direction: column;
+  /* aligne les éléments (h1 et filtres) en colonne */
+}
+
+h1 {
+  font-size: var(--clamp16px);
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 400;
+  grid-row: 1;
+}
+
+.filters-container {
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  /* centre les filtres dynamiques */
+}
+
+.filter {
+  border: 0.12vw solid var(--primary);
+  width: 9.0625vw;
+  /* ~175px sur un écran de 1920px de large */
+  aspect-ratio: 178 / 42;
+  /* garde le ratio largeur/hauteur */
+  border-radius: 1.041vw;
+  /* ~20px sur un écran de 1920x1080 */
+  font-size: 0.729vw;
+  /*14px sur viewport de 1920x1080*/
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 0.469vw;
+  /*9px sur un écran de 1920px*/
+  padding: 0;
+  text-align: left;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+.filter:hover {
+  background-color: var(--primary);
+  color: var(--second);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.filter.active {
+  background-color: var(--primary);
+  color: var(--second);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.filter-circle {
+  background-color: var(--primary);
+  width: 0.99vw;
+  /*19.75px sur viewport de 1920x1080*/
+  aspect-ratio: 1 / 1;
+  /* garde le ratio largeur/hauteur */
+  border-radius: 100%;
+  margin-left: 0.469vw;
+  /*9x sur écran de 1920px*/
+  transition: all 0.3s ease;
+}
+
+.filter:hover .filter-circle {
+  background-color: var(--second);
+  transition: all 0.3s ease;
+}
+
+.filter.active .filter-circle {
+  background-color: var(--second);
+  transition: all 0.3s ease;
+}
+
+/*=================================================================*/
+
+.projets-container {
+  grid-column-start: 3;
+  grid-column-end: 11;
+  grid-row: 2;
+  /* prend le reste de l'espace */
+  /*background-color: rgb(119, 149, 161);*/
+  /* débug */
+}
+
+.projets-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: clamp(20px, 4.17vw, 720px) 0px;
+  /* équivalent au espacement entre filtres et projets*/
+}
+
+.projet {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  /* le projet prend toute les colonens de la grid*/
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  /* 4 rows pour les txt */
+  column-gap: var(--clamp24px);
+  /* ≈24px sur un viewport de 1080px */
+  align-items: center;
+}
+
+.projet-thumbnail-container {
+  grid-column-start: 1;
+  grid-column-end: 7;
+  grid-row-start: 1;
+  grid-row-end: 5;
+  align-self: start;
+}
+
+.projet-thumbnail {
+  border: 0.12vw solid var(--primary);
+  width: 100%;
+  /*height: 500px;*/
+  /* alternative si aspect ratio est capricieux */
+  aspect-ratio: 16 /9;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.projet-thumbnail:hover {
+  opacity: 0.7;
+  cursor: pointer;
+  filter: blur(1px);
+  transition: all 0.3s ease;
+}
+
+.projet-titre {
+  grid-column-start: 7;
+  grid-column-end: 9;
+  grid-row: 1;
+  margin: 0;
+  align-self: start;
+  color: var(--primary);
+  font-size: clamp(14px, 1.25vw, 58px);
+  /*24px sur 1920x1080*/
+  transition: all 0.3s ease;
+}
+
+.projet-titre:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.projet-type {
+  grid-column-start: 7;
+  grid-column-end: 9;
+  grid-row: 2;
+  margin: 0;
+  align-self: start;
+  color: var(--primary);
+  font-size: var(--clamp16px);
+  /*16px sur 1920x1080*/
+}
+
+.projet-desc {
+  grid-column-start: 7;
+  grid-column-end: 9;
+  grid-row: 3;
+  margin: 0;
+  align-self: start;
+  color: var(--primary);
+  font-size: var(--clamp16px);
+  /*16px sur 1920x1080*/
+}
+
+.projet-button {
+  grid-column-start: 8;
+  grid-column-end: 9;
+  grid-row: 4;
+  margin: 0;
+  align-self: end;
+  color: var(--primary);
+  font-size: var(--clamp16px);
+  /*16px sur 1920x1080*/
+  width: 8.33vw;
+  /* ~160px sur 1920px */
+  aspect-ratio: 160 / 42;
+  /* garde le ratio largeur/hauteur */
+  background-color: rgba(255, 255, 255, 0);
+  border: 0.12vw solid var(--primary);
+  border-radius: 0.3125vw;
+  /* ≈6px sur un écran de 1920px de large */
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.projet-button:hover {
+  background-color: var(--primary);
+  color: var(--second);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.spacing:nth-of-type(3) {
+  padding-bottom: clamp(400px, 35.17vw, 800px);
+}
+
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+/*               SECTION PROJETS       SECTION PROJETS        SECTION PROJETS               */
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+/*               SECTION APROPOS       SECTION APROPOS        SECTION APROPOS               */
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+
+.h1aproposwrapper {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  column-gap: var(--clamp24px);
+}
+
+.h1apropos {
+  padding-bottom: 4.16vw;
+  /*équivalent responsive de l'espacement entre le h1 projets et les filtres*/
+}
+
+.h1apropos:nth-child(2) {
+  grid-column-start: 4;
+  align-self: start;
+  justify-self: start;
+}
+
+.apropos-wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: var(--clamp24px);
+  padding-right: var(--clamp24px);
+  padding-left: var(--clamp24px);
+  /*height: 52vw;*/
+  /* environ 1000px quand 1920px */
+  /*background-color: red;*/
+  /* débug */
+  padding-bottom: 20vw;
+}
+
+.apropos-container {
+  grid-column-start: 3;
+  grid-column-end: 11;
+  /*background-color: rgb(164, 223, 247);*/
+  /* débug */
+}
+
+.apropos-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: clamp(20px, 4.17vw, 720px) 0px;
+  /* équivalent au espacement entre filtres et projets*/
+}
+
+.apropos {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  /* prend toute les colonnes */
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 0.7vw 1fr 1fr 1fr;
+  /* 4 rows pour les txt - le 0.7vw est pour s'adapter au svg */
+  column-gap: var(--clamp24px);
+  align-items: center;
+}
+
+.apropos-photo-container {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
+
+.apropos-photo {
+  border: 0.12vw solid var(--primary);
+  width: 100%;
+  /*height: 500px;*/
+  /* alternative si aspect ratio est capricieux */
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.coordonnees {
+  grid-column-start: 4;
+  grid-column-end: 6;
+  grid-row: 1;
+  margin: 0;
+  align-self: start;
+  color: var(--primary);
+  font-size: var(--clamp16px);
+}
+
+.coordonnees2 {
+  grid-column-start: 4;
+  grid-column-end: 6;
+  grid-row: 2;
+  margin: 0;
+  align-self: end;
+  color: var(--primary);
+  font-size: var(--clamp16px);
+}
+
+.description {
+  grid-column-start: 4;
+  grid-column-end: -1;
+  grid-row: 4;
+  margin: 0;
+  align-self: end;
+  color: var(--primary);
+  font-size: var(--clamp16px);
+}
+
+.apropos-svg-container {
+  grid-column-start: 6;
+  grid-column-end: -1;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  align-self: start;
+}
+
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+/*               SECTION APROPOS       SECTION APROPOS        SECTION APROPOS               */
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+/*               SECTION LOGICIELS     SECTION LOGICIELS      SECTION LOGICIELS             */
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+.h1logicielswrapper {
+  display: grid;
+  /* pour aligner le h1 */
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: var(--clamp24px);
+  padding-right: var(--clamp24px);
+  padding-left: var(--clamp24px);
+}
+
+.h1logiciels {
+  padding-bottom: 4.16vw;
+  /*équivalent responsive de l'espacement entre le h1 projets et les filtres*/
+  grid-column-start: 3;
+  grid-column-end: 5;
+  align-self: start;
+  justify-self: start;
+}
+
+.logiciels {
+  overflow: hidden;
+}
+
+.logiciels-wrapper {
+  position: relative;
+}
+
+.logiciels-row {
+  display: flex;
+  justify-content: center;
+  gap: 2.52vw;
+}
+
+.logiciels-row img {
+  width: 80px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  padding: 0.2vw;
+  /*border: 0.12vw solid var(--primary);*/
+}
+
+.padding-logiciels {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: calc(16% + 1.25vw);
+  /* puisque 2 colonnes + le padding 24px + le gap 24px ( 100% / 12 colonnes = 8,33% x 2 + 24px + 24px /// si 1.25vw = 24px alors 1,25x2 = 4.44vw*/
+  background: var(--second);
+  z-index: 10;
+  /* pour que ce sois par dessus */
+}
+
+.padding-logiciels-left {
+  left: 0;
+}
+
+.padding-logiciels-right {
+  right: 0;
+  /* pour que ce sois à droite */
+}
+
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+/*               SECTION LOGICIELS     SECTION LOGICIELS      SECTION LOGICIELS             */
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+/*               FOOTER        FOOTER        FOOTER        FOOTER        FOOTER             */
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+
+
+.footer-wrapper {
+  position: relative;
+  display: grid;
+  /* pour aligner le texte */
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: var(--clamp24px);
+  padding-right: var(--clamp24px);
+  padding-left: var(--clamp24px);
+}
+
+.footer-wrapper>p {
+  /* sélectionne l'enfant (<p>) du parent */
+  padding-bottom: 4.16vw;
+  /*équivalent responsive de l'espacement entre le h1 projets et les filtres*/
+  grid-column-start: 1;
+  grid-column-end: 5;
+  align-self: start;
+  justify-self: start;
+  font-size: clamp(12px, 0.729vw, 36px);
+  /* ≈14px sur un viewport de 1920x1080px */
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 400;
+  z-index: 4;
+}
+
+.footer-links {
+  padding-bottom: 4.16vw;
+  /*équivalent responsive de l'espacement entre le h1 projets et les filtres*/
+  align-self: end;
+  justify-self: end;
+  font-size: clamp(12px, 0.729vw, 36px);
+  /* ≈14px sur un viewport de 1920x1080px */
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 400;
+  cursor: pointer;
+  object-fit: contain;
+  z-index: 4;
+}
+
+.footer-links:nth-child(2) {
+  grid-column-start: 11
+}
+
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+/*               FOOTER        FOOTER        FOOTER        FOOTER        FOOTER             */
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+
+/** ===============================     MEDIA   QUERIES    ================================ */
+/** ===============================     MEDIA   QUERIES    ================================ */
+/** ===============================     MEDIA   QUERIES    ================================ */
+
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+/*               TABLETTE          TABLETTE         TABLETTE         TABLETTE               */
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+
+@media screen and (max-width: 1450px) {
+  /* tablettes et plus petits écrans */
+
+  .spacer-filters {
+    display: block;
+    height: 323vw;
+    /* à cause de la logique vue (v-if/v-show) les projets overlap les boutons de filtres, pas la solution idéale mais seule que j'ai trouvé */
+  }
+
+  .projets-wrapper {
+    display: grid;
+    grid-template-columns: repeat(6,
+        1fr);
+    /* <- 6 colonnes de taille répartie également */
+    column-gap: var(--clamp24px);
+    padding-right: var(--clamp24px);
+    /* marges */
+    padding-left: var(--clamp24px);
+    grid-template-rows: 3.4% 1fr;
+  }
+
+  .projets-filters-container {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    visibility: hidden; /* beaucoups de problèmes responsive du au fonctionnement des filtres et de l'espace que prennent les projets dans l'espace, selon moi la meilleure solution est d'enlever les filtres sur autre que desktop. */
+  }
+
+  .filter {
+    width: 19.0625vw;
+    /* fait à l'oeil; environ 110px donc une semblant de tiers de la grid */
+    aspect-ratio: 112 / 26;
+    /* garde le ratio largeur/hauteur */
+    border-radius: 5vw;
+    /* ~40px */
+    font-size: 1.425vw;
+    /*12px*/
+    gap: 1.4vw;
+    /*9px*/
+  }
+
+  .filter-circle {
+    width: 1.9vw;
+    /* 12px */
+    aspect-ratio: 1 / 1;
+    /* garde le ratio largeur/hauteur */
+    margin-left: 1.4vw;
+    /*9px*/
+  }
+
+  /* ///////////////////////////////////////////////////////////////// */
+  .projets-container {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    max-height: 200px;
+    /* pour palier à l'espace vide que prennait la section du au système de v-if/v-show */
+  }
+
+  .projets-grid {
+    display: grid;
+    grid-template-columns: repeat(6,
+        1fr);
+    /* <- 6 colonnes de taille répartie également */
+    column-gap: var(--clamp24px);
+    gap: clamp(20px, 16.17vw, 720px) 0px;
+  }
+
+  .projet-thumbnail-container {
+    align-self: start;
+  }
+
+  .projet-button {
+    grid-column-start: 7;
+    width: 100%;
+  }
+
+  .projet-titre {
+    font-size: 2.2vw;
+    /*24px sur 1920x1080*/
+  }
+
+  .spacing:nth-of-type(3) {
+    padding-bottom: 20vw;
+  }
+
+  /* ///////////////////////////////////////////////////////////////// */
+
+  .h1logicielswrapper {
+    display: grid;
+    /* pour aligner le h1 */
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: var(--clamp24px);
+    padding-right: var(--clamp24px);
+    padding-left: var(--clamp24px);
+  }
+
+  .h1logiciels {
+    padding-bottom: 4.16vw;
+    /*équivalent responsive de l'espacement entre le h1 projets et les filtres*/
+    grid-column-start: 1;
+    grid-column-end: 6;
+  }
+
+  .logiciels {
+    overflow: hidden;
+  }
+
+  .logiciels-wrapper {
+    position: relative;
+
+  }
+
+  .logiciels-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2.52vw;
+  }
+
+  .logiciels-row>img {
+    grid-row: 1;
+    width: 80px;
+    padding: 0.2vw;
+  }
+
+  .logiciels-row>img:nth-child(even) {
+    grid-row: 2;
+  }
+
+  .padding-logiciels {
+    width: 24px;
+  }
+
+
+  /* /////////////////////////////////////////////////////////////////////// */
+
+  .h1aproposwrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: var(--clamp24px);
+  }
+
+  .h1apropos:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    align-self: start;
+    justify-self: start;
+  }
+
+  .h1apropos:nth-child(2) {
+    grid-column-start: 4;
+    align-self: start;
+    justify-self: start;
+  }
+
+  .apropos-wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: var(--clamp24px);
+    padding-right: var(--clamp24px);
+    padding-left: var(--clamp24px);
+
+  }
+
+  .apropos-container {
+    grid-column-start: 1;
+    grid-column-end: -1;
+
+  }
+
+  .apropos-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+  }
+
+  .apropos {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    /* prend toute les colonnes */
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: var(--clamp24px);
+    row-gap: var(--clamp24px);
+  }
+
+  .apropos-photo-container {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 2;
+  }
+
+  .coordonnees {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row: 3;
+    align-self: start;
+    text-align: left;
+  }
+
+  .coordonnees2 {
+    grid-column-start: 3;
+    grid-column-end: 7;
+    grid-row: 3;
+    align-self: start;
+    text-align: right;
+  }
+
+  .description {
+    grid-column-start: 4;
+    grid-column-end: -1;
+    grid-row: 2;
+    align-self: end;
+  }
+
+  .apropos-svg-container {
+    grid-column-start: 4;
+    grid-column-end: -1;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    align-self: start;
+  }
+
+  /* /////////////////////////////////////////////////////////////////////////// */
+
+  .footer-wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: var(--clamp24px);
+    padding-right: var(--clamp24px);
+    padding-left: var(--clamp24px);
+    padding-top: 16.16vw;
+  }
+
+  .footer-wrapper>p {
+    /* sélectionne l'enfant (<p>) du parent = (Ryan Dufault)*/
+    padding-bottom: 4.16vw;
+    /*équivalent responsive de l'espacement entre le h1 projets et les filtres*/
+    grid-column-start: 1;
+    grid-column-end: 3;
+    align-self: start;
+    justify-self: start;
+  }
+
+  .footer-links:nth-child(3) {
+    padding-bottom: 4.16vw;
+    /*équivalent responsive de l'espacement entre le h1 projets et les filtres*/
+    align-self: end;
+    justify-self: end;
+    grid-column-start: 6;
+  }
+
+  .footer-links:nth-child(2) {
+    grid-column-start: 5;
+  }
+
+  
+}
+
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+/*               TABLETTE          TABLETTE         TABLETTE         TABLETTE               */
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+/*               MOBILE          MOBILE         MOBILE         MOBILE                       */
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+
+@media screen and (max-width: 750px) {
+  .header {
+    padding-top: var(--clamp16px);
+    /* ≈24px sur un viewport de 1080px */
+    padding-left: var(--clamp16px);
+
+  }
+
+  .header-svg {
+    width: 45vw;
+    /* pour aligner à la 4ème colonne*/
+  }
+
+  .svg-wrapper {
+    padding-left: var(--clamp16px);
+    padding-right: var(--clamp16px);
+  }
+
+  .svg-container {
+    width: 100%;
+    height: auto;
+    padding-top: 60%;
+    /* pour centrer au milieu */
+  }
+
+  .responsive-svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* ///////////////////////////////////////////////////////////////// */
+
+  .spacer-filters {
+    display: block;
+    height: 433vw;
+    /* à cause de la logique vue (v-if/v-show) les projets overlap les boutons de filtres, pas la solution idéale mais seule que j'ai trouvé */
+  }
+
+  .projets-wrapper {
+    display: grid;
+    grid-template-columns: repeat(6,
+        1fr);
+    /* <- 6 colonnes de taille répartie également */
+    column-gap: var(--clamp16px);
+    padding-right: var(--clamp16px);
+    /* marges */
+    padding-left: var(--clamp16px);
+    grid-template-rows: 3.4% 1fr;
+  }
+
+  .projets-filters-container {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    visibility: hidden; /* beaucoups de problèmes responsive du au fonctionnement des filtres et de l'espace que prennent les projets dans l'espace, selon moi la meilleure solution est d'enlever les filtres sur autre que desktop. */
+  }
+
+  .filter {
+    width: 25.0625vw;
+    /* fait à l'oeil; environ 110px donc une semblant de tiers de la grid */
+    aspect-ratio: 112 / 26;
+    /* garde le ratio largeur/hauteur */
+    border-radius: 9vw;
+    /* ~40px */
+    font-size: 2.625vw;
+    /*12px*/
+    gap: 2.2vw;
+    /*9px*/
+  }
+
+  .filter-circle {
+    width: 3vw;
+    /* 12px */
+    aspect-ratio: 1 / 1;
+    /* garde le ratio largeur/hauteur */
+    margin-left: 2.2vw;
+    /*9px*/
+  }
+
+  /* ///////////////////////////////////////////////////////////////// */
+  .projets-container {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    max-height: 2300px;
+    /* pour palier à l'espace vide que prennait la section du au système de v-if/v-show */
+  }
+
+  .projets-grid {
+    display: grid;
+    grid-template-columns: repeat(6,
+        1fr);
+    /* <- 6 colonnes de taille répartie également */
+    column-gap: var(--clamp16px);
+  }
+
+  .projet {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    /* le projet prend toute les colonens de la grid*/
+    display: grid;
+    grid-template-columns: repeat(6,
+        1fr);
+    grid-template-rows: repeat(2, 1fr);
+    /* 1 row pour img 1 row pour les textes */
+    row-gap: var(--clamp16px);
+    align-items: center;
+  }
+
+  .projet-thumbnail-container {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row: 1;
+  }
+
+  .projet-titre {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row: 2;
+    font-size: 5.5vw;
+  }
+
+  .projet-type {
+    display: none;
+  }
+
+  .projet-desc {
+    grid-column-start: 4;
+    grid-column-end: 7;
+    grid-row: 2;
+    align-self: start;
+    text-align: right;
+
+  }
+
+  .projet-button {
+    display: none;
+  }
+
+  .spacing:nth-of-type(3) {
+    padding-bottom: 20vw;
+  }
+
+  /* ///////////////////////////////////////////////////////////////// */
+
+  .h1logicielswrapper {
+    display: grid;
+    /* pour aligner le h1 */
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: var(--clamp16px);
+    padding-right: var(--clamp16px);
+    padding-left: var(--clamp16px);
+  }
+
+  .h1logiciels {
+    padding-bottom: 4.16vw;
+    /*équivalent responsive de l'espacement entre le h1 projets et les filtres*/
+    grid-column-start: 1;
+    grid-column-end: 6;
+  }
+
+  .logiciels {
+    overflow: hidden;
+  }
+
+  .logiciels-wrapper {
+    position: relative;
+
+  }
+
+  .logiciels-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2.52vw;
+  }
+
+  .logiciels-row>img {
+    grid-row: 1;
+    width: 60px;
+    padding: 0.2vw;
+  }
+
+  .logiciels-row>img:nth-child(even) {
+    grid-row: 2;
+  }
+
+  .padding-logiciels {
+    width: 16px;
+    /* puisque 2 colonnes + le padding 24px + le gap 24px ( 100% / 12 colonnes = 8,33% x 2 + 24px + 24px */
+  }
+
+
+  /* /////////////////////////////////////////////////////////////////////// */
+
+  .h1aproposwrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: var(--clamp16px);
+  }
+
+  .h1apropos:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    align-self: start;
+    justify-self: start;
+  }
+
+  .h1apropos:nth-child(2) {
+    grid-column-start: 4;
+    align-self: start;
+    justify-self: start;
+  }
+
+  .apropos-wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: var(--clamp16px);
+    padding-right: var(--clamp16px);
+    padding-left: var(--clamp16px);
+    padding-bottom: 20vw;
+  }
+
+  .apropos-container {
+    grid-column-start: 1;
+    grid-column-end: -1;
+  }
+
+  .apropos-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+  }
+
+  .apropos {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    /* prend toute les colonnes */
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: var(--clamp16px);
+  }
+
+  .apropos-photo-container {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 2;
+  }
+
+  .coordonnees {
+    grid-column-start: 4;
+    grid-column-end: -1;
+    grid-row: 2;
+    align-self: end;
+    text-align: left;
+  }
+
+  .coordonnees2 {
+    grid-column-start: 3;
+    grid-column-end: 7;
+    grid-row: 4;
+    align-self: end;
+    text-align: right;
+  }
+
+  .description {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row: 3;
+    align-self: end;
+  }
+
+  .apropos-svg-container {
+    grid-column-start: 4;
+    grid-column-end: -1;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    align-self: start;
+  }
+
+  /* /////////////////////////////////////////////////////////////////////////// */
+
+  .footer-wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: var(--clamp16px);
+    padding-right: var(--clamp16px);
+    padding-left: var(--clamp16px);
+    padding-top: 4.16vw;
+
+  }
+
+  .footer-wrapper>p {
+    /* sélectionne l'enfant (<p>) du parent = (Ryan Dufault)*/
+    padding-bottom: 4.16vw;
+    /*équivalent responsive de l'espacement entre le h1 projets et les filtres*/
+    grid-column-start: 1;
+    grid-column-end: 5;
+    align-self: start;
+    justify-self: start;
+  }
+
+  .footer-links:nth-child(3) {
+    padding-bottom: 4.16vw;
+    /*équivalent responsive de l'espacement entre le h1 projets et les filtres*/
+    align-self: end;
+    justify-self: end;
+    grid-column-start: 6;
+  }
+
+  .footer-links:nth-child(2) {
+    grid-column-start: 5;
+  }
+
+}
+
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+/*               MOBILE          MOBILE         MOBILE         MOBILE                       */
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+
+/* ============== RESPONSIVE FIXES ======================================================== */
+@media screen and (max-width: 600px) {
+  .projets-container {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    max-height: 1600px;
+    /* pour palier à l'espace vide que prennait la section du au système de v-if/v-show */
+  }
+
+
+
+}
+
+@media screen and (max-width: 450px) {
+  .header-svg {
+    width: 55vw; /*plus grand, s'adapte à la moitié de la 4ème colonne */
+  }
+  .projets-container {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    max-height: 1350px;
+    /* pour palier à l'espace vide que prennait la section du au système de v-if/v-show */
+  }
+
+
+}
+
+@media screen and (max-width: 400px) {
+  .projets-container {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    max-height: 1100px;
+    /* pour palier à l'espace vide que prennait la section du au système de v-if/v-show */
+  }
+
+
+}
