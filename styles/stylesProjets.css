@@ -38,6 +38,13 @@ body::selection {
   color: var(--second);
 }
 
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  color: var(--primary);
+}
+
 /* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
 /*    HEADER      HEADER      HEADER      HEADER      HEADER      HEADER      HEADER        */
 /* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
@@ -329,7 +336,7 @@ body::selection {
   width: 100%;
   /*height: 500px;*/
   /* alternative si aspect ratio est capricieux */
-  /*aspect-ratio: 16 /9;*/
+  aspect-ratio: 16 /9;
   object-fit: cover;
   cursor: zoom-in;
 }
@@ -420,7 +427,8 @@ body::selection {
 /*          PROCESSUS      PROCESSUS      PROCESSUS      PROCESSUS      PROCESSUS           */
 /* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
 .processus-container {
-  padding-top: 3.75vw; /* équivalent espace titre projet et yt container*/
+  padding-top: 3.75vw;
+  /* équivalent espace titre projet et yt container*/
   grid-column-start: 1;
   grid-column-end: -1;
   display: grid;
@@ -429,7 +437,8 @@ body::selection {
 }
 
 h3 {
-  font-size: clamp(36px, 2.188vw, 58px); /* équivalent description projet */
+  font-size: clamp(36px, 2.188vw, 58px);
+  /* équivalent description projet */
   color: var(--primary);
   text-decoration: none;
   font-weight: 400;
@@ -443,7 +452,8 @@ h3 {
   overflow: hidden;
   margin: 0;
   color: var(--primary);
-  padding-bottom: var(--clamp16px); /* en plus du rowgap de 24px */
+  padding-bottom: var(--clamp16px);
+  /* en plus du rowgap de 24px */
 }
 
 .etape2 {
@@ -453,7 +463,8 @@ h3 {
   overflow: hidden;
   margin: 0;
   color: var(--primary);
-  padding-bottom: var(--clamp16px); /* en plus du rowgap de 24px */
+  padding-bottom: var(--clamp16px);
+  /* en plus du rowgap de 24px */
 }
 
 .etape3 {
@@ -463,10 +474,24 @@ h3 {
   overflow: hidden;
   margin: 0;
   color: var(--primary);
-  padding-bottom: var(--clamp16px); /* en plus du rowgap de 24px */
+  padding-bottom: var(--clamp16px);
+  /* en plus du rowgap de 24px */
 }
 
-.etape1 p:first-of-type { /* sélectionne premier texte */
+.etape4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto auto;
+  column-gap: var(--clamp24px);
+  overflow: hidden;
+  margin: 0;
+  color: var(--primary);
+  padding-bottom: var(--clamp16px);
+  /* en plus du rowgap de 24px */
+}
+
+.etape1 p:first-of-type {
+  /* sélectionne premier texte */
   grid-column-start: 1;
   grid-column-end: 2;
   align-self: start;
@@ -476,7 +501,8 @@ h3 {
 
 }
 
-.etape1 p:last-of-type { /* sélectionne deuxième texte */
+.etape1 p:last-of-type {
+  /* sélectionne deuxième texte */
   grid-column-start: 1;
   grid-column-end: 3;
   font-size: var(--clamp16px);
@@ -484,30 +510,35 @@ h3 {
   align-self: end;
 }
 
-.etape1 img:first-of-type { /* sélectionne première image */
+.etape1 img:first-of-type {
+  /* sélectionne première image */
   grid-column-start: 1;
   grid-column-end: 2;
   border: 0.12vw solid var(--primary);
   object-fit: scale-down;
   cursor: zoom-in;
-  max-width: 100%; /* empêche de dépasser le container */
+  max-width: 100%;
+  /* empêche de dépasser le container */
   aspect-ratio: 16/9;
   object-fit: cover;
 }
 
 
-.etape1 img:last-of-type { /* sélectionne deuxième image */
+.etape1 img:last-of-type {
+  /* sélectionne deuxième image */
   grid-column-start: 2;
   grid-column-end: 3;
   border: 0.12vw solid var(--primary);
   object-fit: scale-down;
   cursor: zoom-in;
-  max-width: 100%; /* empêche de dépasser le container */
+  max-width: 100%;
+  /* empêche de dépasser le container */
   aspect-ratio: 16/9;
   object-fit: cover;
 }
 
-.etape2 p:first-of-type { /* sélectionne premier texte */
+.etape2 p:first-of-type {
+  /* sélectionne premier texte */
   grid-column-start: 1;
   grid-column-end: 2;
   grid-column-start: 1;
@@ -516,10 +547,11 @@ h3 {
   padding-bottom: var(--clamp16px);
   align-self: start;
   justify-self: start;
-  
+
 }
 
-.etape2 p:last-of-type { /* sélectionne deuxième texte */
+.etape2 p:last-of-type {
+  /* sélectionne deuxième texte */
   grid-column-start: 1;
   grid-column-end: 3;
   font-size: var(--clamp16px);
@@ -527,29 +559,34 @@ h3 {
   align-self: end;
 }
 
-.etape2 img:first-of-type { /* sélectionne première image */
+.etape2 img:first-of-type {
+  /* sélectionne première image */
   grid-column-start: 1;
   grid-column-end: 2;
   border: 0.12vw solid var(--primary);
   object-fit: cover;
   cursor: zoom-in;
-  max-width: 100%; /* empêche de dépasser le container */
+  max-width: 100%;
+  /* empêche de dépasser le container */
   aspect-ratio: 16/9;
   object-fit: cover;
 }
 
-.etape2 img:last-of-type { /* sélectionne deuxième image */
+.etape2 video:first-of-type {
+  /* sélectionne deuxième image */
   grid-column-start: 2;
   grid-column-end: 3;
   border: 0.12vw solid var(--primary);
   object-fit: cover;
   cursor: zoom-in;
-  max-width: 100%; /* empêche de dépasser le container */
+  max-width: 100%;
+  /* empêche de dépasser le container */
   aspect-ratio: 16/9;
   object-fit: cover;
 }
 
-.etape3 p:first-of-type { /* sélectionne premier texte */
+.etape3 p:first-of-type {
+  /* sélectionne premier texte */
   grid-column-start: 1;
   grid-column-end: 2;
   font-size: clamp(18px, 1.25vw, 28px);
@@ -558,7 +595,8 @@ h3 {
   justify-self: start;
 }
 
-.etape3 p:last-of-type { /* sélectionne deuxième texte */
+.etape3 p:last-of-type {
+  /* sélectionne deuxième texte */
   grid-column-start: 1;
   grid-column-end: 3;
   font-size: var(--clamp16px);
@@ -566,25 +604,82 @@ h3 {
   align-self: end;
 }
 
-.etape3 img:first-of-type { /* sélectionne première image */
+.etape3 img:first-of-type {
+  /* sélectionne première image */
   border: 0.12vw solid var(--primary);
   object-fit: cover;
   cursor: zoom-in;
-  max-width: 100%; /* empêche de dépasser le container */
+  max-width: 100%;
+  /* empêche de dépasser le container */
   aspect-ratio: 16/9;
   object-fit: cover;
 }
 
-.etape3 img:last-of-type { /* sélectionne deuxième image */
+.etape3 img:last-of-type {
+  /* sélectionne deuxième image */
   grid-column-start: 2;
   grid-column-end: 3;
   border: 0.12vw solid var(--primary);
   object-fit: cover;
   cursor: zoom-in;
-  max-width: 100%; /* empêche de dépasser le container */
+  max-width: 100%;
+  /* empêche de dépasser le container */
   aspect-ratio: 16/9;
   object-fit: cover;
 }
+
+.etape4 p:first-of-type {
+  /* sélectionne premier texte */
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row: 1;
+  font-size: clamp(18px, 1.25vw, 28px);
+  padding-bottom: var(--clamp16px);
+  align-self: start;
+  justify-self: start;
+
+}
+
+.etape4 p:last-of-type {
+  /* sélectionne deuxième texte */
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 2;
+  font-size: var(--clamp16px);
+  padding-bottom: clamp(18px, 0.625vw, 28px);
+  align-self: end;
+}
+
+.etape4 img:first-of-type {
+  /* sélectionne première image */
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row: 3;
+  border: 0.12vw solid var(--primary);
+  object-fit: cover;
+  cursor: zoom-in;
+  max-width: 100%;
+  /* empêche de dépasser le container */
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.etape4 video:first-of-type {
+  /* sélectionne deuxième image */
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row: 3;
+  border: 0.12vw solid var(--primary);
+  object-fit: cover;
+  cursor: zoom-in;
+  max-width: 100%;
+  /* empêche de dépasser le container */
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
 /* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
 /*          PROCESSUS      PROCESSUS      PROCESSUS      PROCESSUS      PROCESSUS           */
 /* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */

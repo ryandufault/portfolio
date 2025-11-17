@@ -56,18 +56,20 @@
     },
     {
       "id": 3,
-      "titre": "Maison Hantée",
+      "titre": "audmdex",
       "type": "Web",
       "logiciels": [
-        "HTML<br>",
+        "Vite<br>",
+        "Vue.js<br>",
+        "JavaScript<br>",
+        "HTML",
         "CSS"
       ],
-      "mention": "Projet académique",
+      "mention": "Projet personnel",
       "roles": [
-        "Développeur web<br>",
-        "Designer graphique"
+        "Développeur web<br>"
       ],
-      "description": "Maison Hantée est un projet de portail web sur le thème de l'horreur. L'interacteur se retrouve devant des portes, chacune menant à des créatures terrifiantes."
+      "description": "Outil web pour inspecter rapidement les métadonnées d'un fichier audio directement dans le navigateur.<br> Le téléversement et le traitement se font entièrement côté client sans jamais envoyer les fichiers à un serveur. L'outil affiche les métadonnées dans un format clair et lisible, puis efface tout dès que la page est fermée <br><span><br><a href=\"https://ryandufault.github.io/audmdex/\" target=\"_blank\">Lien vers l'outil ↗</a>"
     },
     {
       "id": 4,

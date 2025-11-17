@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ryan Dufault : Maison Hantée</title>
+  <title>Ryan Dufault : audmdex</title>
   <link rel="icon" type="image/x-icon" href="/assets/favicon.svg">
   <link rel="stylesheet" href="../styles/stylesProjets.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,7 +16,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" defer></script>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <script src="../scripts/scriptsMaisonHantee.js" defer></script>
+  <script src="../scripts/scriptsAudmdex.js" defer></script>
   <script src="../scripts/scriptsProjets.js" defer></script>
 </head>
 
@@ -40,7 +40,7 @@
     <p v-show="etat === 'loading'" class="fetchEtat">Chargement...</p>
     <p v-show="etat === 'error'" class="fetchEtat">Erreur lors du chargement des projets.</p>
     <div class="youtube-container">
-      <img src="../assets/maisonhantee/maisonhanteethumbnail.webp" alt="Miniature du projet Maison Hantée">
+      <img src="../assets/audmdex/audmdexthumbnail.webp" alt="Miniature du projet audmdex">
     </div>
     <p class="projet-titre" v-show="etat === 'loaded'">{{ projetActuel?.titre }}</p>
     <!-- le "?" fait en sorte d'afficher quand les données arrivent sinon c'est broken (https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Optional_chaining) -->
@@ -72,9 +72,8 @@
   <div class="spacing"></div>
   <section class="galerie-wrapper">
     <div class="image1">
-      <img src="../assets/maisonhantee/maisonhantee1.webp"
-        @click="selectImg('../assets/maisonhantee/maisonhantee1.webp')" alt="Image statique du projet Maison Hantée"
-        loading="lazy">
+      <img src="../assets/audmdex/audmdex1.webp" @click="selectImg('../assets/audmdex/audmdex1.webp')"
+        alt="Image statique du projet audmdex" loading="lazy">
       <!-- au clic, call la méthode qui récup source de l'img -->
     </div>
     <div class="overlay" :class="{ active: image }" @click="closeOverlay">
@@ -82,28 +81,71 @@
       <img :src="image"> <!-- affiche image sélectionnée -->
     </div>
     <div class="image2">
-      <img src="../assets/maisonhantee/maisonhantee2.webp"
-        @click="selectImg('../assets/maisonhantee/maisonhantee2.webp')" alt="Image statique du projet Maison Hantée"
-        loading="lazy">
+      <img src="../assets/audmdex/audmdex2.webp" @click="selectImg('../assets/audmdex/audmdex2.webp')"
+        alt="Image statique du projet audmdex" loading="lazy">
     </div>
     <div class="image3456">
-      <img class="image3456-1" src="../assets/maisonhantee/maisonhantee3.webp"
-        alt="Image statique du projet Maison Hantée" @click="selectImg('../assets/maisonhantee/maisonhantee3.webp')"
-        loading="lazy">
+      <img class="image3456-1" src="../assets/audmdex/audmdex3.webp" alt="Image démontrant la version mobile de audmdex"
+        @click="selectImg('../assets/audmdex/audmdex3.webp')" loading="lazy">
       <video class="video1" autoplay loop muted playsinline aria-hidden="true" loading="lazy"
-        poster="../assets/maisonhantee/maisonhantee4.png" @click="selectImg('../assets/maisonhantee/maisonhantee4.png')"
-        alt="Court extrait vidéo du projet Maison Hantée">
-        <source src="../assets/maisonhantee/maisonhantee4.webm" type="video/webm">
+        poster="../assets/audmdex/dm2.webp" @click="selectImg('../assets/audmdex/dm2.webp')"
+        alt="Court extrait vidéo du projet audmdex">
+        <source src="../assets/audmdex/dm7.webm" type="video/webm">
       </video>
-      <video class="video2" autoplay loop muted playsinline aria-hidden="true" loading="lazy"
-        poster="../assets/maisonhantee/maisonhantee5.png" @click="selectImg('../assets/maisonhantee/maisonhantee5.png')"
-        alt="Court extrait vidéo du projet Maison Hantée">
-        <source src="../assets/maisonhantee/maisonhantee5.webm" type="video/webm">
-      </video>
-      <img class="image3456-4" src="../assets/maisonhantee/maisonhantee6.webp"
-        alt="Image statique du projet Maison Hantée" @click="selectImg('../assets/maisonhantee/maisonhantee6.webp')"
-        loading="lazy">
+      <img class="image3456-3" src="../assets/audmdex/audmdex5.webp" alt="Image du code source de audmdex"
+        @click="selectImg('../assets/audmdex/audmdex5.webp')" loading="lazy">
+      <img class="image3456-4" src="../assets/audmdex/audmdex4.webp" alt="Image démontrant le README.md de audmdex"
+        @click="selectImg('../assets/audmdex/audmdex4.webp')" loading="lazy">
     </div>
+    <section class="processus-container">
+      <h3>Processus de création</h3>
+      <div class="etape1">
+        <p>1ère étape : Layout statique de base du projet</p>
+        <p>Structuration du projet via vite et vue.js.<br>Mise en page html avec stylisation css. Il était important
+          d'établir l'interface statique du projet avant de commencer quoi que ce soit.</p>
+        <img src="../assets/audmdex/dm1.webp" @click="selectImg('../assets/audmdex/dm1.webp')"
+          alt="Image du processus de création, étape du layout statique">
+        <img src="../assets/audmdex/dm2.webp" @click="selectImg('../assets/audmdex/dm2.webp')"
+          alt="Image du processus de création, étape du layout statique">
+      </div>
+      <div class="etape2">
+        <p>2ème étape : Traitement du fichier</p>
+        <p>Extraction des informations basiques du fichier dans la console. Cette étape utilise l'API native du
+          traitement de fichier de
+          JavaScript pour accéder aux métadonnées du fichier.</p>
+        <img src="../assets/audmdex/dm3.webp" @click="selectImg('../assets/audmdex/dm3.webp')"
+          alt="Image du processus de création, étape du traitement des données">
+        <video autoplay loop muted playsinline aria-hidden="true" loading="lazy" poster="../assets/audmdex/dm2.webp"
+          @click="selectImg('../assets/audmdex/dm2.webp')" alt="Court extrait vidéo du projet audmdex">
+          <source src="../assets/audmdex/dm4.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="etape3">
+        <p>3ème étape : Extraction avancée du fichier</p>
+        <p>Utilisation de la librairie <a href="https://github.com/Borewit/music-metadata-browser"
+            target="_blank">music-metadata-browser ↗</a> pour traiter le fichier audio et extraire les métadonnées
+          complètes. <br>Stockage des
+          données dans l'état du composant dédié, le tout directement dans la mémoire temporaire de
+          l'ordinateur.<br>Génération d'une URL unique à partir des données binaires de l'image
+          extraite du
+          fichier audio.</p>
+        <img src="../assets/audmdex/dm5.webp" @click="selectImg('../assets/audmdex/dm5.webp')"
+          alt="Image du processus de création, étape de l'extraction des données">
+        <img src="../assets/audmdex/dm6.webp" @click="selectImg('../assets/audmdex/dm6.webp')"
+          alt="Image du processus de création, étape de l'extraction des données">
+      </div>
+      <div class="etape4">
+        <p>4ème étape : Affichage visuel des métadonnées dans l'interface</p>
+        <p>Création d'un composant Vue.js pour afficher l'image de couverture et les métadonnées
+          textuelles dans l'interface.</p>
+        <video autoplay loop muted playsinline aria-hidden="true" loading="lazy" poster="../assets/audmdex/dm2.webp"
+          @click="selectImg('../assets/audmdex/dm2.webp')" alt="Court extrait vidéo du projet audmdex">
+          <source src="../assets/audmdex/dm7.webm" type="video/webm">
+        </video>
+        <img src="../assets/audmdex/dm8.webp" @click="selectImg('../assets/audmdex/dm8.webp')"
+          alt="Image du processus de création, étape de l'affichage visuel des données">
+      </div>
+    </section>
   </section>
   <div class="spacing"></div>
   <footer>
@@ -111,7 +153,7 @@
       <p>Ryan Dufaultㅤ-ㅤ2025</p>
       <a class="footer-links" href="https://github.com/ryandufault" target="_blank">Github</a>
       <a class="footer-links" href="https://www.linkedin.com/in/ryandufault/" target="_blank">LinkedIn</a>
-  </div>
+    </div>
   </footer>
 </body>
 
