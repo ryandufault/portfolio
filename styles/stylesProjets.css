@@ -24,6 +24,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-image: url("../assets/noise.svg");
 }
 
 body {
@@ -396,7 +397,7 @@ a:focus {
   cursor: zoom-out;
   backdrop-filter: blur(2px);
   /* flou de fond */
-  background-image: url("./assets/noise.svg");
+  background-image: url("../assets/noise.svg");
   /* effet de grain de fond */
 }
 

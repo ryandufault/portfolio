@@ -17,6 +17,7 @@
       0.833vw,
       32px);
   /* ≈16px sur un viewport de 1920x1080px */
+  background-image: url("../assets/noise.svg");
 }
 
 * {
@@ -639,7 +640,8 @@ h1 {
   .projets-filters-container {
     grid-column-start: 1;
     grid-column-end: 7;
-    visibility: hidden; /* beaucoups de problèmes responsive du au fonctionnement des filtres et de l'espace que prennent les projets dans l'espace, selon moi la meilleure solution est d'enlever les filtres sur autre que desktop. */
+    visibility: hidden;
+    /* beaucoups de problèmes responsive du au fonctionnement des filtres et de l'espace que prennent les projets dans l'espace, selon moi la meilleure solution est d'enlever les filtres sur autre que desktop. */
   }
 
   .filter {
@@ -872,7 +874,7 @@ h1 {
     grid-column-start: 5;
   }
 
-  
+
 }
 
 /* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
@@ -936,7 +938,8 @@ h1 {
   .projets-filters-container {
     grid-column-start: 1;
     grid-column-end: 7;
-    visibility: hidden; /* beaucoups de problèmes responsive du au fonctionnement des filtres et de l'espace que prennent les projets dans l'espace, selon moi la meilleure solution est d'enlever les filtres sur autre que desktop. */
+    visibility: hidden;
+    /* beaucoups de problèmes responsive du au fonctionnement des filtres et de l'espace que prennent les projets dans l'espace, selon moi la meilleure solution est d'enlever les filtres sur autre que desktop. */
   }
 
   .filter {
@@ -1218,8 +1221,10 @@ h1 {
 
 @media screen and (max-width: 450px) {
   .header-svg {
-    width: 55vw; /*plus grand, s'adapte à la moitié de la 4ème colonne */
+    width: 55vw;
+    /*plus grand, s'adapte à la moitié de la 4ème colonne */
   }
+
   .projets-container {
     grid-column-start: 1;
     grid-column-end: 7;
