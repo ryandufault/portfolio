@@ -530,6 +530,27 @@ h1 {
   /*border: 0.12vw solid var(--primary);*/
 }
 
+
+.logiciel-cursor {
+  /* texte suit le curseur */
+  position: fixed;
+  background-color: var(--primary);
+  color: var(--second);
+  padding: 2px 2px;
+  font-size: 14px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 9999;
+  transform: translate(-50%, -100%);
+  margin-top: -15px;
+  margin-left: 30px;
+}
+
+.logiciel-cursor.active {
+  opacity: 1;
+}
+
 .padding-logiciels {
   position: absolute;
   top: 0;

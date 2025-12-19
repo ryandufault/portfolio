@@ -94,7 +94,7 @@ let animLogiciels = gsap.to(".logiciels-row", { // animations sur la bande de lo
   duration: 7,
   repeat: -1,
   yoyo: true, // effet de "yoyo"
-  ease: "sine.inOut", // lissage
+  ease: "sine.inOut",
 });
 
 document.querySelector(".logiciels-row").addEventListener("mouseover", function(event) { // quand on hover ça stop l'animation
@@ -247,4 +247,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
 /* BOUTONS/CLICS    BOUTONS/CLICS    BOUTONS/CLICS    */
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+/* HOVER LOGICIELS   HOVER LOGICIELS   HOVER LOGICIELS */
+/* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
+
+const logicielCursor = document.getElementById('logiciel-cursor');
+const logicielImages = document.querySelectorAll('.logiciels-row img');
+
+logicielImages.forEach(img => { // pour chaque img
+  img.addEventListener('mouseenter', function(e) { // quand la souris enter l'img
+    const title = this.getAttribute('title') || this.getAttribute('alt'); // reprend l'attribut html title
+    logicielCursor.textContent = title; // en met son contenu dans le text
+    logicielCursor.classList.add('active');
+  });
+
+  img.addEventListener('mousemove', function(e) {
+    logicielCursor.style.left = e.clientX + 'px';
+    logicielCursor.style.top = e.clientY + 'px';
+  });
+
+  img.addEventListener('mouseleave', function() {
+    logicielCursor.classList.remove('active');
+  });
+});
+
+/* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
+/* HOVER LOGICIELS   HOVER LOGICIELS   HOVER LOGICIELS */
 /* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
