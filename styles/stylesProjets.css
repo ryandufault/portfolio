@@ -680,6 +680,28 @@ h3 {
   object-fit: cover;
 }
 
+#fleuretape2 {
+  /* sélectionne deuxième image */
+
+  grid-column-start: 2;
+
+  grid-column-end: 3;
+
+  border: 0.12vw solid var(--primary);
+
+  object-fit: cover;
+
+  cursor: zoom-in;
+
+  max-width: 100%;
+  /* empêche de dépasser le container */
+
+  aspect-ratio: 16/9;
+
+  object-fit: cover;
+
+}
+
 /* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
 /*          PROCESSUS      PROCESSUS      PROCESSUS      PROCESSUS      PROCESSUS           */
 /* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
