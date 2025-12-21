@@ -400,24 +400,51 @@ a:focus {
   /* effet de grain de fond */
 }
 
+/* pour montrer l'overlay quand une image est cliquée */
+.overlay.active {
+  display: flex;
+}
+
 .overlay img {
   /* display l'image avec le @click */
   max-width: 80%;
   max-height: 80%;
   object-fit: contain;
-
+  cursor: default;
+  /* empêche la fermeture au clic sur l'image */
 }
 
-.overlay source {
-  /* display l'image avec le @click */
-  max-width: 80%;
-  max-height: 80%;
-  object-fit: contain;
-}
-
-/* pour montrer l'overlay quand une image est cliquée (si overlay possède class : active) */
-.overlay.active {
+.overlay-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--second);
+  border: none;
+  font-size: 24px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1001;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.overlay-arrow:hover {
+  opacity: 0.7;
+  filter: blur(1px);
+  transition: all 0.3s ease;
+}
+
+.overlay-arrow-left {
+  left: 40px;
+}
+
+.overlay-arrow-right {
+  right: 40px;
 }
 
 /* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
@@ -1108,6 +1135,10 @@ h3 {
     max-height: 100%;
     transform: rotate(-90deg);
     /* rotate l'img sélectionnée à 90 degré (mieux adapté/intuitif aux écrans mobiles) */
+  }
+
+  .overlay-arrow {
+    display: none;
   }
 }
 

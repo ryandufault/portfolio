@@ -75,33 +75,44 @@
     <div class="spacing"></div>
     <section class="galerie-wrapper">
         <div class="image1">
-            <img src="../assets/fleur/fleur1.webp" @click="selectImg('../assets/fleur/fleur1.webp')"
+            <img src="../assets/fleur/fleur1.webp" @click="selectImg($event.target.src, $event.target)"
                 alt="Miniature du projet Fleur" loading="lazy">
             <!-- au clic, call la méthode qui récup source de l'img -->
         </div>
         <div class="overlay" :class="{ active: image }" @click="closeOverlay">
-            <!-- class .active ajoutée si image select (selectImg(src)), sinon overlay display: none-->
-            <img :src="image"> <!-- affiche image sélectionnée -->
+            <button class="overlay-arrow overlay-arrow-left" @click.stop="prevImage" v-show="currentIndex > 0">
+                ←
+            </button>
+
+            <!-- recup l'img -->
+            <img :src="image" @click.stop>
+
+            <button class="overlay-arrow overlay-arrow-right" @click.stop="nextImage"
+                v-show="currentIndex < images.length - 1">
+                →
+            </button>
         </div>
         <div class="image2">
-            <img src="../assets/fleur/fleur2.webp" @click="selectImg('../assets/fleur/fleur2.webp')"
+            <img src="../assets/fleur/fleur2.webp" @click="selectImg($event.target.src, $event.target)"
                 alt="Image statique du projet Fleur" loading="lazy">
         </div>
         <div class="image3456">
-            <img class="image3456-1" src="../assets/fleur/fleur3.webp" @click="selectImg('../assets/fleur/fleur3.webp')"
-                alt="Image statique du projet Fleur" loading="lazy">
+            <img class="image3456-1" src="../assets/fleur/fleur3.webp"
+                @click="selectImg($event.target.src, $event.target)" alt="Image statique du projet Fleur"
+                loading="lazy">
             <video class="video1" autoplay loop muted playsinline aria-hidden="true" loading="lazy"
-                poster="../assets/fleur/fleur4.webp" @click="selectImg('../assets/fleur/fleur4.webp')"
+                poster="../assets/fleur/fleur4.webp" @click="selectImg($event.target.src, $event.target)"
                 alt="Court extrait vidéo du projet Fleur">
                 <source src="../assets/fleur/fleur1.webm" type="video/webm">
             </video>
             <video class="video2" autoplay loop muted playsinline aria-hidden="true" loading="lazy"
-                poster="../assets/fleur/fleur5.webp" @click="selectImg('../assets/fleur/fleur5.webp')"
+                poster="../assets/fleur/fleur5.webp" @click="selectImg($event.target.src, $event.target)"
                 alt="Court extrait vidéo du projet Fleur">
                 <source src="../assets/fleur/fleur2.webm" type="video/webm">
             </video>
-            <img class="image3456-4" src="../assets/fleur/fleur6.webp" @click="selectImg('../assets/fleur/fleur6.webp')"
-                alt="Image statique du projet Fleur" loading="lazy">
+            <img class="image3456-4" src="../assets/fleur/fleur6.webp"
+                @click="selectImg($event.target.src, $event.target)" alt="Image statique du projet Fleur"
+                loading="lazy">
         </div>
         <section class="processus-container">
             <h3>Processus de création</h3>
@@ -110,18 +121,19 @@
                 <p>Génération d'herbe avec les pinceaux Maya, création des pétales du pissenlit avec XGen, <br>animation
                     de vent sur l'ensemble de la scène réalisée avec une déformation de vague (wave),<br> texturation
                     avec du bruit (noise) et des dégradés</p>
-                <img src="../assets/fleur/dm1.webp" @click="selectImg('../assets/fleur/dm1.webp')"
+                <img src="../assets/fleur/dm1.webp" @click="selectImg($event.target.src, $event.target)"
                     alt="Image du processus de création, étape modélisation">
-                <img src="../assets/fleur/dm2.webp" @click="selectImg('../assets/fleur/dm2.webp')"
+                <img src="../assets/fleur/dm2.webp" @click="selectImg($event.target.src, $event.target)"
                     alt="Image du processus de création, étape modélisation">
             </div>
             <div class="etape2">
                 <p>2ème étape : Audio</p>
                 <p>Utilisation de synthétiseurs.<br> Effets de réverbérations, écho, égalisation, manipulation stéréo (+
                     mastering)</p>
-                <img src="../assets/fleur/dm3.webp" @click="selectImg('../assets/fleur/dm3.webp')"
+                <img src="../assets/fleur/dm3.webp" @click="selectImg($event.target.src, $event.target)"
                     alt="Image du processus de création, étape audio">
-                <img id="fleuretape2" src="../assets/fleur/dm4.webp" @click="selectImg('../assets/fleur/dm4.webp')"
+                <img id="fleuretape2" src="../assets/fleur/dm4.webp"
+                    @click="selectImg($event.target.src, $event.target)"
                     alt="Image du processus de création, étape audio">
             </div>
             <div class="etape3">
@@ -133,9 +145,9 @@
                     - Glow (pour les lucioles)<br>
                     - Tracking (pour le soleil)<br>
                     - Encodage en Apple ProRes 4444 Rec.709 2.4</p>
-                <img src="../assets/fleur/dm5.webp" @click="selectImg('../assets/fleur/dm5.webp')"
+                <img src="../assets/fleur/dm5.webp" @click="selectImg($event.target.src, $event.target)"
                     alt="Image du processus de création, étape audio">
-                <img src="../assets/fleur/dm6.webp" @click="selectImg('../assets/fleur/dm6.webp')"
+                <img src="../assets/fleur/dm6.webp" @click="selectImg($event.target.src, $event.target)"
                     alt="Image du processus de création, étape audio">
             </div>
         </section>

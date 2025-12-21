@@ -77,33 +77,42 @@
     <div class="spacing"></div>
     <section class="galerie-wrapper">
         <div class="image1">
-            <img src="../assets/birden/birden1.webp" @click="selectImg('../assets/birden/birden1.webp')"
+            <img src="../assets/birden/birden1.webp" @click="selectImg($event.target.src, $event.target)"
                 alt="Miniature du projet Birden" loading="lazy">
             <!-- au clic, call la méthode qui récup source de l'img -->
         </div>
         <div class="overlay" :class="{ active: image }" @click="closeOverlay">
-            <!-- class .active ajoutée si image select (selectImg(src)), sinon overlay display: none-->
-            <img :src="image"> <!-- affiche image sélectionnée -->
+            <button class="overlay-arrow overlay-arrow-left" @click.stop="prevImage" v-show="currentIndex > 0">
+                ⇐
+            </button>
+
+            <!-- recup l'img -->
+            <img :src="image" @click.stop>
+
+            <button class="overlay-arrow overlay-arrow-right" @click.stop="nextImage"
+                v-show="currentIndex < images.length - 1">
+                ←
+            </button>
         </div>
         <div class="image2">
-            <img src="../assets/birden/birden2.webp" @click="selectImg('../assets/birden/birden2.webp')"
+            <img src="../assets/birden/birden2.webp" @click="selectImg($event.target.src, $event.target)"
                 alt="Image statique du projet Birden" loading="lazy">
         </div>
         <div class="image3456">
             <img class="image3456-1" src="../assets/birden/birden3.webp" alt="Image statique du projet Birden"
-                @click="selectImg('../assets/birden/birden3.webp')" loading="lazy">
+                @click="selectImg($event.target.src, $event.target)" loading="lazy">
             <video class="video1" autoplay loop muted playsinline aria-hidden="true" loading="lazy"
-                poster="../assets/birden/birden4.webp" @click="selectImg('../assets/birden/birden4.webp')"
+                poster="../assets/birden/birden4.webp" @click="selectImg($event.target.src, $event.target)"
                 alt="Court extrait vidéo du projet Birden">
                 <source src="../assets/birden/birden4.webm" type="video/webm">
             </video>
             <video class="video2" autoplay loop muted playsinline aria-hidden="true" loading="lazy"
-                poster="../assets/birden/birden5.webp" @click="selectImg('../assets/birden/birden5.webp')"
+                poster="../assets/birden/birden5.webp" @click="selectImg($event.target.src, $event.target)"
                 alt="Court extrait vidéo du projet Birden">
                 <source src="../assets/birden/birden5.webm" type="video/webm">
             </video>
             <img class="image3456-4" src="../assets/birden/birden6.webp" alt="Image statique du projet Birden"
-                @click="selectImg('../assets/birden/birden6.webp')" loading="lazy">
+                @click="selectImg($event.target.src, $event.target)" loading="lazy">
         </div>
     </section>
     <div class="spacing"></div>

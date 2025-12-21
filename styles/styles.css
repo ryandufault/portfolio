@@ -690,7 +690,7 @@ h1 {
   .projets-container {
     grid-column-start: 1;
     grid-column-end: -1;
-    max-height: 200px;
+    max-height: 25px;
     /* pour palier à l'espace vide que prennait la section du au système de v-if/v-show */
   }
 
@@ -988,7 +988,7 @@ h1 {
   .projets-container {
     grid-column-start: 1;
     grid-column-end: 7;
-    max-height: 2300px;
+    max-height: 1400px;
     /* pour palier à l'espace vide que prennait la section du au système de v-if/v-show */
   }
 
@@ -1231,7 +1231,7 @@ h1 {
   .projets-container {
     grid-column-start: 1;
     grid-column-end: 7;
-    max-height: 1600px;
+    max-height: 1000px;
     /* pour palier à l'espace vide que prennait la section du au système de v-if/v-show */
   }
 
@@ -1248,7 +1248,7 @@ h1 {
   .projets-container {
     grid-column-start: 1;
     grid-column-end: 7;
-    max-height: 1350px;
+    max-height: 750px;
     /* pour palier à l'espace vide que prennait la section du au système de v-if/v-show */
   }
 
@@ -1259,7 +1259,7 @@ h1 {
   .projets-container {
     grid-column-start: 1;
     grid-column-end: 7;
-    max-height: 1100px;
+    max-height: 850px;
     /* pour palier à l'espace vide que prennait la section du au système de v-if/v-show */
   }
 

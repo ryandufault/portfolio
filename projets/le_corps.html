@@ -75,33 +75,42 @@
   <div class="spacing"></div>
   <section class="galerie-wrapper">
     <div class="image1">
-      <img src="../assets/lecorps/lecorps1.webp" @click="selectImg('../assets/lecorps/lecorps1.webp')"
+      <img src="../assets/lecorps/lecorps1.webp" @click="selectImg($event.target.src, $event.target)"
         alt="Image statique du projet Le Corps" loading="lazy">
       <!-- au clic, call la méthode qui récup source de l'img -->
     </div>
     <div class="overlay" :class="{ active: image }" @click="closeOverlay">
-      <!-- class .active ajoutée si image select (selectImg(src)), sinon overlay display: none-->
-      <img :src="image"> <!-- affiche image sélectionnée -->
+      <button class="overlay-arrow overlay-arrow-left" @click.stop="prevImage" v-show="currentIndex > 0">
+        ←
+      </button>
+
+      <!-- recup l'img -->
+      <img :src="image" @click.stop>
+
+      <button class="overlay-arrow overlay-arrow-right" @click.stop="nextImage"
+        v-show="currentIndex < images.length - 1">
+        →
+      </button>
     </div>
     <div class="image2">
-      <img src="../assets/lecorps/lecorps2.webp" @click="selectImg('../assets/lecorps/lecorps2.webp')"
+      <img src="../assets/lecorps/lecorps2.webp" @click="selectImg($event.target.src, $event.target)"
         alt="Image statique du projet Le Corps" loading="lazy">
     </div>
     <div class="image3456">
       <img class="image3456-1" src="../assets/lecorps/lecorps3.webp"
-        @click="selectImg('../assets/lecorps/lecorps3.webp')" alt="Image statique du projet Le Corps" loading="lazy">
+        @click="selectImg($event.target.src, $event.target)" alt="Image statique du projet Le Corps" loading="lazy">
       <video class="video1" autoplay loop muted playsinline aria-hidden="true" loading="lazy"
-        poster="../assets/lecorps/lecorps4.webp" @click="selectImg('../assets/lecorps/lecorps4.webp')"
+        poster="../assets/lecorps/lecorps4.webp" @click="selectImg($event.target.src, $event.target)"
         alt="Court extrait vidéo du projet Le Corps">
         <source src="../assets/lecorps/lecorps4.webm" type="video/webm">
       </video>
       <video class="video2" autoplay loop muted playsinline aria-hidden="true" loading="lazy"
-        poster="../assets/lecorps/lecorps5.webp" @click="selectImg('../assets/lecorps/lecorps5.webp')"
+        poster="../assets/lecorps/lecorps5.webp" @click="selectImg($event.target.src, $event.target)"
         alt="Court extrait vidéo du projet Le Corps">
         <source src="../assets/lecorps/lecorps5.webm" type="video/webm">
       </video>
       <img class="image3456-4" src="../assets/lecorps/lecorps6.webp"
-        @click="selectImg('../assets/lecorps/lecorps6.webp')" alt="Image statique du projet Le Corps" loading="lazy">
+        @click="selectImg($event.target.src, $event.target)" alt="Image statique du projet Le Corps" loading="lazy">
     </div>
   </section>
   <div class="spacing"></div>
@@ -110,7 +119,7 @@
       <p>Ryan Dufaultㅤ-ㅤ2025</p>
       <a class="footer-links" href="https://github.com/ryandufault" target="_blank">Github</a>
       <a class="footer-links" href="https://www.linkedin.com/in/ryandufault/" target="_blank">LinkedIn</a>
-  </div>
+    </div>
   </footer>
 </body>
 

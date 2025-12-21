@@ -39,21 +39,52 @@ const vm = appli.mount('.projet-wrapper');
 /* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
 
 /* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
-/* VUE GALERIE   VUE GALERIE   VUE GALERIe            */
+/* VUE GALERIE   VUE GALERIE   VUE GALERIE            */
 /* v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v=v= */
 
 const appli2 = Vue.createApp({
     data() {
         return {
-            image: null // image qui sera sélectionnée
+            image: null, // image qui sera sélectionnée
+            images: [], // liste de toutes les images
+            currentIndex: -1 // index de l'image actuelle
         };
     },
+    mounted() {
+        // recup lesi mg
+        const imgElements = document.querySelectorAll('.galerie-wrapper img[loading="lazy"], .processus-container img');
+        this.images = Array.from(imgElements).map(img => img.src);
+        
+        // navig clavier
+        document.addEventListener('keydown', (e) => {
+            if (this.image) {
+                if (e.key === 'ArrowLeft') this.prevImage();
+                if (e.key === 'ArrowRight') this.nextImage();
+                if (e.key === 'Escape') this.closeOverlay();
+            }
+        });
+    },
     methods: {
-        selectImg(imgSrc) { // méthode lors du clic
-            this.image = imgSrc // récupère la source de l'image cliquée
+        selectImg(imgSrc, clickedElement) { // méthode lors du clic
+            const allImages = document.querySelectorAll('.galerie-wrapper img[loading="lazy"], .processus-container img');
+            this.currentIndex = Array.from(allImages).findIndex(img => img.src === clickedElement.src);
+            this.image = clickedElement.src; // récupère la source de l'image cliquée
         },
         closeOverlay() {
             this.image = null; // pour fermer l'overlay
+            this.currentIndex = -1;
+        },
+        prevImage() {
+            if (this.currentIndex > 0) {
+                this.currentIndex--;
+                this.image = this.images[this.currentIndex];
+            }
+        },
+        nextImage() {
+            if (this.currentIndex < this.images.length - 1) {
+                this.currentIndex++;
+                this.image = this.images[this.currentIndex];
+            }
         }
     }
 });
@@ -61,5 +92,5 @@ const appli2 = Vue.createApp({
 const vm2 = appli2.mount('.galerie-wrapper');
 
 /* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
-/* VUE GALERIE   VUE GALERIE   VUE GALERIe            */
+/* VUE GALERIE   VUE GALERIE   VUE GALERIE            */
 /* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */

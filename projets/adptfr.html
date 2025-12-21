@@ -72,27 +72,35 @@
   <div class="spacing"></div>
   <section class="galerie-wrapper">
     <div class="image1">
-      <img src="../assets/adptfr/adptfr1.webp" alt="adptfr numéro 1" @click="selectImg('../assets/adptfr/adptfr1.webp')"
-        loading="lazy">
+      <img src="../assets/adptfr/adptfr1.webp" alt="adptfr numéro 1"
+        @click="selectImg($event.target.src, $event.target)" loading="lazy">
       <!-- au clic, call la méthode qui récup source de l'img -->
     </div>
     <div class="overlay" :class="{ active: image }" @click="closeOverlay">
-      <!-- class .active ajoutée si image select (selectImg(src)), sinon overlay display: none-->
-      <img :src="image"> <!-- affiche image sélectionnée -->
+      <button class="overlay-arrow overlay-arrow-left" @click.stop="prevImage" v-show="currentIndex > 0">
+        ← </button>
+
+      <!-- recup l'img -->
+      <img :src="image" @click.stop>
+
+      <button class="overlay-arrow overlay-arrow-right" @click.stop="nextImage"
+        v-show="currentIndex < images.length - 1">
+        →
+      </button>
     </div>
     <div class="image2">
-      <img src="../assets/adptfr/adptfr2.webp" alt="adptfr numéro 2" @click="selectImg('../assets/adptfr/adptfr2.webp')"
-        loading="lazy">
+      <img src="../assets/adptfr/adptfr2.webp" alt="adptfr numéro 2"
+        @click="selectImg($event.target.src, $event.target)" loading="lazy">
     </div>
     <div class="image3456">
       <img class="image3456-1" src="../assets/adptfr/adptfr3.webp" alt="adptfr numéro 3"
-        @click="selectImg('../assets/adptfr/adptfr3.webp')" loading="lazy">
+        @click="selectImg($event.target.src, $event.target)" loading="lazy">
       <img class="video1" src="../assets/adptfr/adptfr4.webp" alt="adptfr numéro 4"
-        @click="selectImg('../assets/adptfr/adptfr4.webp')" loading="lazy">
+        @click="selectImg($event.target.src, $event.target)" loading="lazy">
       <img class="video2" src="../assets/adptfr/adptfr5.webp" alt="adptfr numéro 5"
-        @click="selectImg('../assets/adptfr/adptfr5.webp')" loading="lazy">
+        @click="selectImg($event.target.src, $event.target)" loading="lazy">
       <img class="image3456-4" src="../assets/adptfr/adptfr6.webp" alt="adptfr numéro 6"
-        @click="selectImg('../assets/adptfr/adptfr6.webp')" loading="lazy">
+        @click="selectImg($event.target.src, $event.target)" loading="lazy">
     </div>
   </section>
   <div class="spacing"></div>

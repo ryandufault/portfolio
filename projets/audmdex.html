@@ -72,30 +72,39 @@
   <div class="spacing"></div>
   <section class="galerie-wrapper">
     <div class="image1">
-      <img src="../assets/audmdex/audmdex1.webp" @click="selectImg('../assets/audmdex/audmdex1.webp')"
+      <img src="../assets/audmdex/audmdex1.webp" @click="selectImg($event.target.src, $event.target)"
         alt="Image statique du projet audmdex" loading="lazy">
       <!-- au clic, call la méthode qui récup source de l'img -->
     </div>
     <div class="overlay" :class="{ active: image }" @click="closeOverlay">
-      <!-- class .active ajoutée si image select (selectImg(src)), sinon overlay display: none-->
-      <img :src="image"> <!-- affiche image sélectionnée -->
+      <button class="overlay-arrow overlay-arrow-left" @click.stop="prevImage" v-show="currentIndex > 0">
+        ←
+      </button>
+
+      <!-- recup l'img -->
+      <img :src="image" @click.stop>
+
+      <button class="overlay-arrow overlay-arrow-right" @click.stop="nextImage"
+        v-show="currentIndex < images.length - 1">
+        →
+      </button>
     </div>
     <div class="image2">
-      <img src="../assets/audmdex/audmdex2.webp" @click="selectImg('../assets/audmdex/audmdex2.webp')"
+      <img src="../assets/audmdex/audmdex2.webp" @click="selectImg($event.target.src, $event.target)"
         alt="Image statique du projet audmdex" loading="lazy">
     </div>
     <div class="image3456">
       <img class="image3456-1" src="../assets/audmdex/audmdex3.webp" alt="Image démontrant la version mobile de audmdex"
-        @click="selectImg('../assets/audmdex/audmdex3.webp')" loading="lazy">
+        @click="selectImg($event.target.src, $event.target)" loading="lazy">
       <video class="video1" autoplay loop muted playsinline aria-hidden="true" loading="lazy"
-        poster="../assets/audmdex/dm2.webp" @click="selectImg('../assets/audmdex/dm2.webp')"
+        poster="../assets/audmdex/dm2.webp" @click="selectImg($event.target.src, $event.target)"
         alt="Court extrait vidéo du projet audmdex">
         <source src="../assets/audmdex/dm7.webm" type="video/webm">
       </video>
       <img class="image3456-3" src="../assets/audmdex/audmdex5.webp" alt="Image du code source de audmdex"
-        @click="selectImg('../assets/audmdex/audmdex5.webp')" loading="lazy">
+        @click="selectImg($event.target.src, $event.target)" loading="lazy">
       <img class="image3456-4" src="../assets/audmdex/audmdex4.webp" alt="Image démontrant le README.md de audmdex"
-        @click="selectImg('../assets/audmdex/audmdex4.webp')" loading="lazy">
+        @click="selectImg($event.target.src, $event.target)" loading="lazy">
     </div>
     <section class="processus-container">
       <h3>Processus de création</h3>
@@ -103,9 +112,9 @@
         <p>1ère étape : Layout statique de base du projet</p>
         <p>Structuration du projet via vite et vue.js.<br>Mise en page html avec stylisation css. Il était important
           d'établir l'interface statique du projet avant de commencer quoi que ce soit.</p>
-        <img src="../assets/audmdex/dm1.webp" @click="selectImg('../assets/audmdex/dm1.webp')"
+        <img src="../assets/audmdex/dm1.webp" @click="selectImg($event.target.src, $event.target)"
           alt="Image du processus de création, étape du layout statique">
-        <img src="../assets/audmdex/dm2.webp" @click="selectImg('../assets/audmdex/dm2.webp')"
+        <img src="../assets/audmdex/dm2.webp" @click="selectImg($event.target.src, $event.target)"
           alt="Image du processus de création, étape du layout statique">
       </div>
       <div class="etape2">
@@ -113,10 +122,10 @@
         <p>Extraction des informations basiques du fichier dans la console. Cette étape utilise l'API native du
           traitement de fichier de
           JavaScript pour accéder aux métadonnées du fichier.</p>
-        <img src="../assets/audmdex/dm3.webp" @click="selectImg('../assets/audmdex/dm3.webp')"
+        <img src="../assets/audmdex/dm3.webp" @click="selectImg($event.target.src, $event.target)"
           alt="Image du processus de création, étape du traitement des données">
         <video autoplay loop muted playsinline aria-hidden="true" loading="lazy" poster="../assets/audmdex/dm2.webp"
-          @click="selectImg('../assets/audmdex/dm2.webp')" alt="Court extrait vidéo du projet audmdex">
+          @click="selectImg($event.target.src, $event.target)" alt="Court extrait vidéo du projet audmdex">
           <source src="../assets/audmdex/dm4.webm" type="video/webm">
         </video>
       </div>
@@ -129,9 +138,9 @@
           l'ordinateur.<br>Génération d'une URL unique à partir des données binaires de l'image
           extraite du
           fichier audio.</p>
-        <img src="../assets/audmdex/dm5.webp" @click="selectImg('../assets/audmdex/dm5.webp')"
+        <img src="../assets/audmdex/dm5.webp" @click="selectImg($event.target.src, $event.target)"
           alt="Image du processus de création, étape de l'extraction des données">
-        <img src="../assets/audmdex/dm6.webp" @click="selectImg('../assets/audmdex/dm6.webp')"
+        <img src="../assets/audmdex/dm6.webp" @click="selectImg($event.target.src, $event.target)"
           alt="Image du processus de création, étape de l'extraction des données">
       </div>
       <div class="etape4">
@@ -139,10 +148,10 @@
         <p>Création d'un composant Vue.js pour afficher l'image de couverture et les métadonnées
           textuelles dans l'interface.</p>
         <video autoplay loop muted playsinline aria-hidden="true" loading="lazy" poster="../assets/audmdex/dm2.webp"
-          @click="selectImg('../assets/audmdex/dm2.webp')" alt="Court extrait vidéo du projet audmdex">
+          @click="selectImg($event.target.src, $event.target)" alt="Court extrait vidéo du projet audmdex">
           <source src="../assets/audmdex/dm7.webm" type="video/webm">
         </video>
-        <img src="../assets/audmdex/dm8.webp" @click="selectImg('../assets/audmdex/dm8.webp')"
+        <img src="../assets/audmdex/dm8.webp" @click="selectImg($event.target.src, $event.target)"
           alt="Image du processus de création, étape de l'affichage visuel des données">
       </div>
     </section>
