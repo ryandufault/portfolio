@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ryan Dufault : Incisive</title>
+  <title>Ryan Dufault : adptfr</title>
   <link rel="icon" type="image/x-icon" href="/assets/favicon.svg">
   <link rel="stylesheet" href="../styles/stylesProjets.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,7 +16,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" defer></script>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <script src="../scripts/scriptsIncisive.js" defer></script>
+  <script src="../scripts/scriptsAdptfr.js" defer></script>
   <script src="../scripts/scriptsProjets.js" defer></script>
 </head>
 
@@ -36,13 +36,12 @@
   <!-- ======================================================================================================================== -->
   <!-- ========================================          SECTION PROJET          ============================================== -->
   <!-- =======================================https://getcameracrew.com/tools/youtube-embed-code-generator=============================================== -->
-  <section class="projet-wrapper" data-index="5">
+  <section class="projet-wrapper" data-index="4">
     <p v-show="etat === 'loading'" class="fetchEtat">Chargement...</p>
     <p v-show="etat === 'error'" class="fetchEtat">Erreur lors du chargement des projets.</p>
     <div class="youtube-container">
-      <img src="../assets/incisive/incisivethumbnail.webp" alt="Miniature du projet Incisive">
+      <img src="../assets/adptfr/adptfrthumbnail.webp" alt="adptfrs combinés">
     </div>
-
     <p class="projet-titre" v-show="etat === 'loaded'">{{ projetActuel?.titre }}</p>
     <!-- le "?" fait en sorte d'afficher quand les données arrivent sinon c'est broken (https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Optional_chaining) -->
     <div class="infos-projet" v-show="etat === 'loaded'">
@@ -50,7 +49,7 @@
       <p class="projet-info-space">•</p>
       <p class="projet-type">{{ projetActuel?.type }}</p>
       <!--                                -->
-      <p class="projet-info">Logiciels</p>
+      <p class="projet-info">Stack technique</p>
       <p class="projet-info-space">•</p>
       <div class="projet-logiciels">
         <p v-for="(logiciel, index) in projetActuel?.logiciels" v-html="logiciel"></p>
@@ -64,14 +63,16 @@
       <!--                                -->
       <p class="projet-info">Rôle</p>
       <p class="projet-info-space">•</p>
-      <p class="projet-role">{{ projetActuel?.roles }}</p>
+      <div class="projet-role">
+        <p v-for="(role, index) in projetActuel?.roles" v-html="role"></p>
+      </div>
     </div>
     <p class="projet-description" v-html="projetActuel?.description"></p>
   </section>
   <div class="spacing"></div>
   <section class="galerie-wrapper">
     <div class="image1">
-      <img src="../assets/incisive/incisive1.webp" @click="selectImg('../assets/incisive/incisive1.webp')"
+      <img src="../assets/adptfr/adptfr1.webp" alt="adptfr numéro 1" @click="selectImg('../assets/adptfr/adptfr1.webp')"
         loading="lazy">
       <!-- au clic, call la méthode qui récup source de l'img -->
     </div>
@@ -80,18 +81,18 @@
       <img :src="image"> <!-- affiche image sélectionnée -->
     </div>
     <div class="image2">
-      <img src="../assets/incisive/incisive2.webp" @click="selectImg('../assets/incisive/incisive2.webp')"
+      <img src="../assets/adptfr/adptfr2.webp" alt="adptfr numéro 2" @click="selectImg('../assets/adptfr/adptfr2.webp')"
         loading="lazy">
     </div>
     <div class="image3456">
-      <img class="image3456-1" src="../assets/incisive/incisive3.webp" alt="Image tirée du projet Incisive"
-        @click="selectImg('../assets/incisive/incisive3.webp')" loading="lazy">
-      <img class="video1" src="../assets/incisive/incisive4.webp"
-        @click="selectImg('../assets/incisive/incisive4.webp')" alt="Image tirée du projet Incisive" loading="lazy">
-      <img class="video2" src="../assets/incisive/incisive5.webp"
-        @click="selectImg('../assets/incisive/incisive5.webp')" alt="Image tirée du projet Incisive" loading="lazy">
-      <img class="image3456-4" src="../assets/incisive/incisive6.webp" alt="Image tirée du projet Incisive"
-        @click="selectImg('../assets/incisive/incisive6.webp')" loading="lazy">
+      <img class="image3456-1" src="../assets/adptfr/adptfr3.webp" alt="adptfr numéro 3"
+        @click="selectImg('../assets/adptfr/adptfr3.webp')" loading="lazy">
+      <img class="video1" src="../assets/adptfr/adptfr4.webp" alt="adptfr numéro 4"
+        @click="selectImg('../assets/adptfr/adptfr4.webp')" loading="lazy">
+      <img class="video2" src="../assets/adptfr/adptfr5.webp" alt="adptfr numéro 5"
+        @click="selectImg('../assets/adptfr/adptfr5.webp')" loading="lazy">
+      <img class="image3456-4" src="../assets/adptfr/adptfr6.webp" alt="adptfr numéro 6"
+        @click="selectImg('../assets/adptfr/adptfr6.webp')" loading="lazy">
     </div>
   </section>
   <div class="spacing"></div>
@@ -100,7 +101,7 @@
       <p>Ryan Dufaultㅤ-ㅤ2025</p>
       <a class="footer-links" href="https://github.com/ryandufault" target="_blank">Github</a>
       <a class="footer-links" href="https://www.linkedin.com/in/ryandufault/" target="_blank">LinkedIn</a>
-  </div>
+    </div>
   </footer>
 </body>
 

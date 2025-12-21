@@ -178,13 +178,13 @@ function projetAudmdex() {
   window.location.href = "projets/audmdex.html"; // dirige l'utilisateur sur la page du projet
 }
 
-//projetAutoportrait
-document.querySelectorAll(".projetAutoportrait").forEach(function(element) { // sélectionne tout les éléments avec la classe
-  element.addEventListener("click", projetAutoportrait); // call la fonction quand clic
+//projetAdptfr
+document.querySelectorAll(".projetAdptfr").forEach(function(element) { // sélectionne tout les éléments avec la classe
+  element.addEventListener("click", projetAdptfr); // call la fonction quand clic
 });
 
-function projetAutoportrait() {
-  window.location.href = "projets/autoportrait.html"; // dirige l'utilisateur sur la page du projet
+function projetAdptfr() {
+  window.location.href = "projets/adptfr.html"; // dirige l'utilisateur sur la page du projet
 }
 
 //projetIncisive
@@ -204,13 +204,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // récupère les bouttons avec leurs id
   let btnVideo = document.getElementById('btnVideo');
   let btnWeb = document.getElementById('btnWeb');
-  let btnDesign = document.getElementById('btnDesign');
+  //let btnDesign = document.getElementById('btnDesign');
   
   // fonction pour enlever la classe .active de tous les boutons
   function resetClass() {
     btnVideo.classList.remove('active');
     btnWeb.classList.remove('active');
-    btnDesign.classList.remove('active');
+    //btnDesign.classList.remove('active');
   }
   
   // au clic,
@@ -234,14 +234,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
   // au clic,
-  btnDesign.addEventListener('click', () => {
+  /*btnDesign.addEventListener('click', () => {
     if (btnDesign.classList.contains('active')) { // si la class .active est présente,
       btnDesign.classList.remove('active'); // alors enlève .active
     } else { // sinon, 
       resetClass(); // réinitialises classes
       btnDesign.classList.add('active'); // puis ajoute class active
     }
-  });
+  });*/
   
 });
 

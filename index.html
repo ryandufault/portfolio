@@ -64,16 +64,16 @@
             <div class="filters-container">
                 <button class="filter" id="btnVideo" @click="btnFiltre('Video')">
                     <div class="filter-circle"></div>
-                    <p>Video</p>
+                    <p>Vidéo</p>
                 </button>
                 <button class="filter" id="btnWeb" @click="btnFiltre('Web')">
                     <div class="filter-circle"></div>
                     <p>Web</p>
                 </button>
-                <button class="filter" id="btnDesign" @click="btnFiltre('Design')">
+                <!-- <button class="filter" id="btnDesign" @click="btnFiltre('Design')">
                     <div class="filter-circle"></div>
                     <p>Design graphique</p>
-                </button>
+                </button> -->
             </div>
             <div class="spacer-filters"></div>
         </div>
@@ -121,6 +121,18 @@
                 <!-- ==============================  4 PROJET  ====================================== -->
                 <div class="projet" v-show="projetFiltre === 'Web' || projetFiltre === null">
                     <div class="projet-thumbnail-container">
+                        <img class="projet-thumbnail projetAdptfr" src="./assets/adptfr/adptfrthumbnail.webp"
+                            alt="Miniature du projet Adptfr" loading="lazy">
+                    </div>
+                    <p class="projet-titre projetAdptfr">•ㅤAdptfr</p>
+                    <p class="projet-type">Typeㅤ•ㅤWeb</p>
+                    <p class="projet-desc">Outil web conçu pour améliorer la qualité du français écrit.</p>
+                    <button class="projet-button projetAdptfr">Voir plus →</button>
+                </div>
+
+                <!-- ==============================  5 PROJET  ====================================== -->
+                <div class="projet" v-show="projetFiltre === 'Web' || projetFiltre === null">
+                    <div class="projet-thumbnail-container">
                         <img class="projet-thumbnail projetAudmdex" src="./assets/audmdex/audmdexthumbnail.webp"
                             alt="Miniature du projet audmdex" loading="lazy">
                     </div>
@@ -130,21 +142,8 @@
                     <button class="projet-button projetAudmdex">Voir plus →</button>
                 </div>
 
-                <!-- ==============================  5 PROJET  ====================================== -->
-                <div class="projet" v-show="projetFiltre === 'Design' || projetFiltre === null">
-                    <div class="projet-thumbnail-container">
-                        <img class="projet-thumbnail projetAutoportrait"
-                            src="./assets/autoportrait/autoportraitthumbnail.webp"
-                            alt="Miniature du projet Autoportrait" loading="lazy">
-                    </div>
-                    <p class="projet-titre projetAutoportrait">•ㅤAutoportrait</p>
-                    <p class="projet-type">Typeㅤ•ㅤDesign</p>
-                    <p class="projet-desc">Exploration visuelle reflétant<br> ma curiosité pour l'expérimentation.</p>
-                    <button class="projet-button projetAutoportrait">Voir plus →</button>
-                </div>
-
                 <!-- ==============================  6 PROJET  ====================================== -->
-                <div class="projet" v-show="projetFiltre === 'Design' || projetFiltre === null">
+                <!-- <div class="projet" v-show="projetFiltre === 'Design' || projetFiltre === null">
                     <div class="projet-thumbnail-container projetIncisive">
                         <img class="projet-thumbnail" src="./assets/incisive/incisivethumbnail.webp"
                             alt="Miniature du projet Incisive" loading="lazy">
@@ -153,7 +152,7 @@
                     <p class="projet-type">Typeㅤ•ㅤDesign Graphique</p>
                     <p class="projet-desc">Réalisation d'un générique fictif en vectoriel.</p>
                     <button class="projet-button projetIncisive">Voir plus →</button>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

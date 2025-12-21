@@ -183,13 +183,13 @@ h1 {
 
 .filter {
   border: 0.12vw solid var(--primary);
-  width: 9.0625vw;
+  width: 16.225vw;
   /* ~175px sur un écran de 1920px de large */
-  aspect-ratio: 178 / 42;
+  aspect-ratio: calc(178*1.75) / 42;
   /* garde le ratio largeur/hauteur */
   border-radius: 1.041vw;
   /* ~20px sur un écran de 1920x1080 */
-  font-size: 0.729vw;
+  font-size: 0.759vw;
   /*14px sur viewport de 1920x1080*/
   color: var(--primary);
   display: flex;
@@ -517,7 +517,7 @@ h1 {
 .logiciels-row {
   display: flex;
   justify-content: center;
-  gap: 2.52vw;
+  gap: 1.52vw;
 }
 
 .logiciels-row img {

@@ -69,31 +69,24 @@
       "roles": [
         "Développeur web<br>"
       ],
-      "description": "Outil web pour inspecter rapidement les métadonnées d'un fichier audio directement dans le navigateur.<br> Le téléversement et le traitement se font entièrement côté client sans jamais envoyer les fichiers à un serveur. L'outil affiche les métadonnées dans un format clair et lisible, puis efface tout dès que la page est fermée <br><span><br><a href=\"https://ryandufault.github.io/audmdex/\" target=\"_blank\">Lien vers l'outil ↗</a>"
+      "description": "Outil web pour inspecter rapidement les métadonnées d'un fichier audio directement dans le navigateur.<br> Le téléversement et le traitement se font entièrement côté client sans jamais envoyer les fichiers à un serveur. L'outil affiche les métadonnées dans un format clair et lisible, puis efface tout dès que la page est fermée. <br><span><br><a href=\"https://ryandufault.github.io/audmdex/\" target=\"_blank\">Lien vers l'outil ↗</a>"
     },
     {
       "id": 4,
-      "titre": "Autoportrait",
-      "type": "Design graphique",
+      "titre": "Adptfr",
+      "type": "Web",
       "logiciels": [
-        "Photoshop<br>",
-        "After Effects"
+        "Vite<br>",
+        "Vue.js<br>",
+        "JavaScript<br>",
+        "HTML",
+        "CSS"
       ],
-      "mention": "Projet académique",
-      "roles": "Designer graphique",
-      "description": "Autoportrait qui présente ma curiosité pour l'expérimentation. À travers des compositions visuelles abstraites, le projet reflète mon désir de repousser les limites de la création."
-    },
-    {
-      "id": 5,
-      "titre": "Incisive",
-      "type": "Design graphique",
-      "logiciels": [
-        "Photoshop<br>",
-        "Illustrator"
+      "mention": "Projet personnel",
+      "roles": [
+        "Développeur web<br>"
       ],
-      "mention": "Projet académique",
-      "roles": "Designer graphique",
-      "description": "Incisive est un générique fictif visant une approche abstraite au vectoriel, notamment avec l'utilisation des modes de fusions. Le projet explore une atmosphère atypique où les formes, les textures et les couleurs se superposent pour créer une expérience visuelle intrigante."
+      "description": "Outil web pour améliorer la qualité du français écrit. L'outil adopte une approche pédagogique efficace aidant à la compréhension grâce à des exemples et des explications claires. Adptfr propose également une version adaptée pour les étudiants en enseignement du français.  <br><span><br><a href=\"https://adptfr.github.io/\" target=\"_blank\">Lien vers l'outil ↗</a>"
     }
   ]
 }
