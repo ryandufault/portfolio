@@ -148,7 +148,7 @@ document.querySelectorAll(".projetFleur").forEach(function(element) { // sélect
 });
 
 function projetFleur() {
-    window.location.href = "projets/fleur.html"; // dirige l'utilisateur sur la page du projet
+    window.location.href = "projets/fleur"; // dirige l'utilisateur sur la page du projet
 }
 
 //projetBirden
@@ -157,7 +157,7 @@ document.querySelectorAll(".projetBirden").forEach(function(element) { // sélec
 });
 
 function projetBirden() {
-  window.location.href = "projets/birden.html"; // dirige l'utilisateur sur la page du projet
+  window.location.href = "projets/birden"; // dirige l'utilisateur sur la page du projet
 }
 
 //projetLecorps
@@ -166,7 +166,7 @@ document.querySelectorAll(".projetLecorps").forEach(function(element) { // séle
 });
 
 function projetLecorps() {
-  window.location.href = "projets/le_corps.html"; // dirige l'utilisateur sur la page du projet
+  window.location.href = "projets/le_corps"; // dirige l'utilisateur sur la page du projet
 }
 
 //projetAudmdex
@@ -175,7 +175,7 @@ document.querySelectorAll(".projetAudmdex").forEach(function(element) { // séle
 });
 
 function projetAudmdex() {
-  window.location.href = "projets/audmdex.html"; // dirige l'utilisateur sur la page du projet
+  window.location.href = "projets/audmdex"; // dirige l'utilisateur sur la page du projet
 }
 
 //projetAdptfr
@@ -184,7 +184,7 @@ document.querySelectorAll(".projetAdptfr").forEach(function(element) { // sélec
 });
 
 function projetAdptfr() {
-  window.location.href = "projets/adptfr.html"; // dirige l'utilisateur sur la page du projet
+  window.location.href = "projets/adptfr"; // dirige l'utilisateur sur la page du projet
 }
 
 //projetIncisive
@@ -193,7 +193,7 @@ document.querySelectorAll(".projetIncisive").forEach(function(element) { // sél
 });
 
 function projetIncisive() {
-  window.location.href = "projets/incisive.html"; // dirige l'utilisateur sur la page du projet
+  window.location.href = "projets/incisive"; // dirige l'utilisateur sur la page du projet
 }
 
 
