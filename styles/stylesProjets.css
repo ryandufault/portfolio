@@ -412,6 +412,13 @@ a:focus {
   object-fit: contain;
   cursor: default;
   /* empêche la fermeture au clic sur l'image */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  pointer-events: auto;
 }
 
 .overlay-arrow {
@@ -420,10 +427,14 @@ a:focus {
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0);
   color: var(--second);
-  border: none;
-  font-size: 24px;
-  width: 60px;
-  height: 60px;
+  border: 0.063vw solid rgba(255, 255, 255, 0.7);
+  border-radius: 0.188vw;
+  /* 3px */
+  font-size: 1.5vw;
+  /* 24px sur 1600px */
+  width: 3.75vw;
+  /* 60px sur 1600px */
+  height: 3.75vw;
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 1001;
@@ -439,12 +450,19 @@ a:focus {
   transition: all 0.3s ease;
 }
 
+.overlay-arrow:active {
+  transform: translateY(-50%) scale(0.984);
+  opacity: 1;
+  filter: blur(0.5px);
+  transition: all 0s ease;
+}
+
 .overlay-arrow-left {
-  left: 40px;
+  left: 2.5vw;
 }
 
 .overlay-arrow-right {
-  right: 40px;
+  right: 2.5vw;
 }
 
 /* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
@@ -666,7 +684,6 @@ h3 {
   padding-bottom: var(--clamp16px);
   align-self: start;
   justify-self: start;
-
 }
 
 .etape4 p:last-of-type {
@@ -1131,9 +1148,9 @@ h3 {
 
 
   .overlay img {
-    max-width: 150%;
-    max-height: 100%;
-    transform: rotate(-90deg);
+    max-width: 150% !important;
+    max-height: 100% !important;
+    transform: rotate(-90deg) !important;
     /* rotate l'img sélectionnée à 90 degré (mieux adapté/intuitif aux écrans mobiles) */
   }
 
@@ -1141,6 +1158,8 @@ h3 {
     display: none;
   }
 }
+
+;
 
 /* ^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^= */
 /*               MOBILE          MOBILE         MOBILE         MOBILE                       */

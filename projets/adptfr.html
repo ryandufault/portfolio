@@ -78,11 +78,10 @@
     </div>
     <div class="overlay" :class="{ active: image }" @click="closeOverlay">
       <button class="overlay-arrow overlay-arrow-left" @click.stop="prevImage" v-show="currentIndex > 0">
-        ← </button>
-
-      <!-- recup l'img -->
-      <img :src="image" @click.stop>
-
+        ←
+      </button>
+      <img :src="image" :style="getImageStyle()" draggable="false" @click.stop @dblclick="handleDoubleClick"
+        @wheel="handleWheel" @mousedown.prevent="startDrag">
       <button class="overlay-arrow overlay-arrow-right" @click.stop="nextImage"
         v-show="currentIndex < images.length - 1">
         →
